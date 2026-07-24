@@ -79,14 +79,14 @@ export const WhyChooseUs: React.FC = () => {
         <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
 
         {/* Animated Marquee Track */}
-        <div className="flex items-center gap-8 animate-marquee-left whitespace-nowrap py-2 w-max select-none">
+        <div className="flex items-center gap-6 animate-marquee-left whitespace-nowrap py-3 w-max select-none">
           {marqueeFeatures.map((feat, index) => {
             const IconComp = getFeatureIcon(feat.icon);
             return (
               <div
                 key={`${feat.id}-${index}`}
                 id={`why-pill-${feat.id}-${index}`}
-                className="inline-flex items-center gap-3.5 px-3 py-2 shrink-0"
+                className="inline-flex items-center gap-4 px-6 py-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm shadow-slate-200/50 hover:shadow-md hover:border-blue-200 transition-all duration-300 shrink-0"
               >
                 {/* Icon Badge */}
                 <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
