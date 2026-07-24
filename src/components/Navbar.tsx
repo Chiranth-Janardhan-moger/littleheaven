@@ -22,7 +22,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
     { name: 'Programs', href: '#programs', id: 'programs' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
     { name: 'Reviews', href: '#reviews', id: 'reviews' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -167,8 +166,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
 
           {/* Action Button */}
           <div className="hidden sm:flex items-center gap-2.5">
-            <Button onClick={onOpenEnroll} id="nav-enroll-btn" size="sm" variant="primary">
-              <span>Enroll Now</span>
+            <Button onClick={onOpenEnroll} id="nav-contact-btn" size="sm" variant="primary">
+              <span>Contact Us</span>
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
@@ -223,7 +222,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                 size="md"
                 variant="primary"
               >
-                <span>Enroll Now</span>
+                <span>Contact Us</span>
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
