@@ -97,30 +97,75 @@ const ToddlerFootprint: React.FC<{ isRightFoot?: boolean; className?: string }> 
 
 /**
  * Divider 2: About -> Programs (MissionToProgramsDivider)
- * Concept: Sequential animated solid filled toddler footsteps walking from left to right.
+ * Concept: Elegant flowing ribbon wave with animated dotted path and toddler footsteps trail leading into Programs.
  */
 export const MissionToProgramsDivider: React.FC = () => {
   const steps = [
-    { x: '5%', y: '45%', rotate: -8, scale: 0.85, isRight: false },
-    { x: '15%', y: '60%', rotate: 8, scale: 0.85, isRight: true },
-    { x: '25%', y: '40%', rotate: -8, scale: 0.9, isRight: false },
-    { x: '35%', y: '58%', rotate: 8, scale: 0.9, isRight: true },
-    { x: '45%', y: '42%', rotate: -8, scale: 0.95, isRight: false },
-    { x: '55%', y: '60%', rotate: 8, scale: 0.95, isRight: true },
-    { x: '65%', y: '40%', rotate: -8, scale: 1, isRight: false },
-    { x: '75%', y: '58%', rotate: 8, scale: 1, isRight: true },
-    { x: '85%', y: '42%', rotate: -8, scale: 1.05, isRight: false },
-    { x: '95%', y: '60%', rotate: 8, scale: 1.05, isRight: true },
+    { x: '5%', y: '42%', rotate: -6, scale: 0.85 },
+    { x: '15%', y: '58%', rotate: 6, scale: 0.85 },
+    { x: '25%', y: '38%', rotate: -6, scale: 0.9 },
+    { x: '35%', y: '56%', rotate: 6, scale: 0.9 },
+    { x: '45%', y: '40%', rotate: -6, scale: 0.95 },
+    { x: '55%', y: '58%', rotate: 6, scale: 0.95 },
+    { x: '65%', y: '38%', rotate: -6, scale: 1 },
+    { x: '75%', y: '56%', rotate: 6, scale: 1 },
+    { x: '85%', y: '40%', rotate: -6, scale: 1.05 },
+    { x: '95%', y: '58%', rotate: 6, scale: 1.05 },
   ];
 
   return (
-    <div className="relative w-full py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-blue-50/20">
+    <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-blue-50/20">
       
-      {/* Soft Glow Horizon */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-16 bg-gradient-to-r from-blue-500/10 via-sky-400/20 to-cyan-500/10 blur-xl pointer-events-none" />
+      {/* Outer Blue Glow Layer */}
+      <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-r from-blue-600/20 via-sky-400/30 to-cyan-500/20 blur-xl pointer-events-none" />
 
-      {/* Walking Toddler Footsteps Trail */}
-      <div className="relative mx-auto max-w-7xl px-4 h-16 sm:h-20 flex items-center justify-between pointer-events-none">
+      {/* Layered Flowing Wave SVG Ribbon */}
+      <svg
+        className="relative block w-full h-24 sm:h-32 lg:h-36 drop-shadow-[0_6px_16px_rgba(37,99,235,0.18)]"
+        viewBox="0 0 1440 140"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="aboutToProgGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="#2563eb" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.25" />
+          </linearGradient>
+          <linearGradient id="aboutToProgDotted" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#2563eb" />
+            <stop offset="50%" stopColor="#38bdf8" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+        </defs>
+
+        {/* Translucent Background Wave */}
+        <path
+          d="M0,35 C360,115 720,-5 1080,85 C1260,120 1380,60 1440,45 L1440,140 L0,140 Z"
+          fill="url(#aboutToProgGrad1)"
+        />
+
+        {/* Animated Flowing Dotted Path Line */}
+        <path
+          d="M0,33 C360,113 720,-7 1080,83 C1260,118 1380,58 1440,43"
+          stroke="url(#aboutToProgDotted)"
+          strokeWidth="3.5"
+          strokeDasharray="6 8"
+          strokeLinecap="round"
+          className="animate-dash-flow opacity-85"
+        />
+
+        {/* Smooth Solid Wave Transition Fill into Programs */}
+        <path
+          d="M0,60 C360,130 720,20 1080,100 C1260,130 1380,70 1440,55 L1440,140 L0,140 Z"
+          fill="#F0F9FF"
+          fillOpacity="0.7"
+        />
+      </svg>
+
+      {/* Walking Toddler Footsteps Trail Overlay */}
+      <div className="absolute inset-0 max-w-7xl mx-auto px-4 flex items-center justify-between pointer-events-none z-20">
         {steps.map((step, idx) => (
           <motion.div
             key={idx}
