@@ -9,9 +9,8 @@ export const WhatsAppButton: React.FC = () => {
       
       {/* Desktop Tooltip */}
       <div className="hidden md:flex items-center gap-2 mr-3 px-4 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/80 shadow-[0_8px_20px_rgba(37,211,102,0.2)] opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out">
-        <span className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
-          <span className="text-base animate-bounce">💬</span>
-          Chat with us on WhatsApp
+        <span className="text-sm font-bold text-slate-800">
+          Chat with us
         </span>
         {/* Tooltip Pointing Arrow */}
         <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white/95 border-t border-r border-emerald-200/80 rotate-45" />
