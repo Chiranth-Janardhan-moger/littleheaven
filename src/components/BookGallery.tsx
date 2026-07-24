@@ -168,8 +168,11 @@ export const BookGallery: React.FC = () => {
             {/* BASE UNDERNEATH TWO-PAGE SPREAD */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 relative z-10">
               
-              {/* Left Base Page */}
-              <div className="relative min-h-[420px] sm:min-h-[460px]">
+              {/* Left Base Page (Click to flip Prev) */}
+              <div
+                onClick={handlePrev}
+                className="relative min-h-[420px] sm:min-h-[460px] cursor-pointer"
+              >
                 {underLeft && (
                   <SinglePageCard
                     page={underLeft}
@@ -179,8 +182,11 @@ export const BookGallery: React.FC = () => {
                 )}
               </div>
 
-              {/* Right Base Page */}
-              <div className="relative min-h-[420px] sm:min-h-[460px]">
+              {/* Right Base Page (Click to flip Next) */}
+              <div
+                onClick={handleNext}
+                className="relative min-h-[420px] sm:min-h-[460px] cursor-pointer"
+              >
                 {underRight && (
                   <SinglePageCard
                     page={underRight}
