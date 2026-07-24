@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Eye, Heart, Sparkles, Award, ShieldCheck, Smile, UserCheck, Star } from 'lucide-react';
+import { Compass, Eye, Heart, Sparkles, Award, ShieldCheck, Smile, UserCheck } from 'lucide-react';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
 
@@ -163,26 +163,6 @@ export const MissionVision: React.FC = () => {
             })}
           </div>
         </div>
-
-        {/* Founder Philosophy Card */}
-        <Card className="p-8 sm:p-10 bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white relative overflow-hidden rounded-3xl border-slate-800">
-          <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center gap-1.5 text-amber-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400" />
-              ))}
-            </div>
-            <blockquote className="text-base sm:text-xl font-medium leading-relaxed italic text-slate-200">
-              "Every child enters early education with an infinite capacity for curiosity and wonder. Our responsibility is not to fill a vessel, but to ignite a flame that lasts a lifetime."
-            </blockquote>
-            <div className="pt-2">
-              <p className="font-extrabold text-white text-base">Directorship & Academic Council</p>
-              <p className="text-xs text-sky-400 font-semibold">Little's Heaven Child Care & Early Learning Sanctuary</p>
-            </div>
-          </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-        </Card>
-
       </div>
     </section>
   );
