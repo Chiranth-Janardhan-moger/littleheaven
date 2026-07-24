@@ -54,7 +54,7 @@
   /* 8-State Hallmark Button Utilities */
   .btn-hallmark {
     display: inline-flex;
-    items-center: center;
+    align-items: center;
     justify-content: center;
     gap: 0.5rem;
     font-weight: 700;
@@ -80,6 +80,34 @@
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+  }
+
+  /* Hallmark Button Light Sweep Effect */
+  .btn-shine-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine-sweep::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg);
+    transition: left 0.65s ease-in-out;
+    pointer-events: none;
+  }
+
+  .btn-shine-sweep:hover::after {
+    left: 140%;
   }
 
   .text-gradient-primary {

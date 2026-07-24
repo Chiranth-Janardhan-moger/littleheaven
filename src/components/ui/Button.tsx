@@ -28,11 +28,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary:
-      'bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 border border-white/30',
+      'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/25 hover:shadow-lg hover:shadow-blue-600/35 border border-blue-500/30 btn-shine-sweep',
     secondary:
-      'bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200/80 shadow-xs',
+      'bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200/80 shadow-xs btn-shine-sweep',
     outline:
-      'bg-white/80 backdrop-blur-md text-slate-800 border border-slate-200/80 hover:bg-white hover:border-blue-300 shadow-xs',
+      'bg-white/90 backdrop-blur-md text-slate-800 border border-slate-200 hover:bg-white hover:border-blue-300 shadow-xs btn-shine-sweep',
     ghost:
       'bg-transparent text-slate-700 hover:bg-slate-100/80 hover:text-blue-600'
   };
