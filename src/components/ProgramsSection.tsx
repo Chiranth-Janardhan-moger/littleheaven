@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { PROGRAMS } from '../data/preschoolData';
 import { Program } from '../types';
 import { ProgramModal } from './ProgramModal';
+import { Button } from './ui/Button';
+import { Badge } from './ui/Badge';
+import { Card } from './ui/Card';
 import {
   Baby,
   Sparkles,
@@ -10,8 +13,7 @@ import {
   Rocket,
   Clock,
   Users,
-  ChevronRight,
-  ArrowRight
+  ChevronRight
 } from 'lucide-react';
 
 interface ProgramsSectionProps {
@@ -49,34 +51,32 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold tracking-wide uppercase">
+          <Badge variant="primary">
             <Sparkles className="w-3.5 h-3.5 text-blue-600" />
             <span>Tailored Early Curriculum</span>
-          </div>
+          </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Nurturing Programs for <br />
             <span className="text-gradient-primary">Every Stage of Growth</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            From infancy discovery to kindergarten leadership, our programs combine play-based exploration with neuroscience-backed developmental milestones.
+            From discovery to kindergarten leadership, our programs combine play-based exploration with milestone early learning.
           </p>
         </div>
 
-        {/* Glassmorphism Program Cards Flex Grid */}
+        {/* Hallmark Bento Grid of Programs */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8 items-stretch">
-          {PROGRAMS.map((prog, index) => {
+          {PROGRAMS.map((prog) => {
             const IconComp = getProgramIcon(prog.iconName);
-            const isEven = index % 2 === 0;
-            const hoverRotateClass = isEven ? 'hover:rotate-1' : 'hover:-rotate-1';
 
             return (
-              <div
+              <Card
                 key={prog.id}
-                className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.3333%-1.35rem)] glass-card glass-card-hover ${hoverRotateClass} rounded-[28px] sm:rounded-[32px] p-5 sm:p-6 flex flex-col justify-between relative group border border-white/90 bg-white/85 shadow-[0_12px_36px_rgba(37,99,235,0.07)] hover:shadow-[0_20px_48px_rgba(37,99,235,0.16)] transition-all duration-500 hover:-translate-y-1.5`}
+                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.3333%-1.35rem)] flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   
-                  {/* 1. Large Program Image */}
+                  {/* Image Showcase */}
                   <div className="relative w-full aspect-[16/11] rounded-[22px] overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-500 bg-slate-100">
                     <img
                       src={prog.image}
@@ -85,65 +85,70 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
                       referrerPolicy="no-referrer"
                     />
                     
-                    {/* Glassmorphism Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Floating Icon Badge */}
                     <div className="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-md border border-white/90 flex items-center justify-center text-blue-600 shadow-md">
                       <IconComp className="w-4 h-4" />
                     </div>
                   </div>
 
-                  {/* 2. Program Name */}
                   <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors pt-1">
                     {prog.title}
                   </h3>
 
-                  {/* 3. Age Display (Premium Glass Badge - Time removed as requested) */}
-                  <div className="pt-1">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-blue-50/90 border border-blue-100/90 text-blue-900 text-xs sm:text-sm font-bold shadow-2xs">
-                      <span className="text-base">👶</span>
-                      <span className="text-slate-700 font-medium">Age: <strong className="text-blue-700 font-extrabold">{prog.ageGroup}</strong></span>
-                    </div>
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-sky-50 text-blue-800 border border-sky-100">
+                      <Users className="w-3.5 h-3.5 text-blue-600" />
+                      {prog.ageGroup}
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700">
+                      <Clock className="w-3.5 h-3.5 text-slate-500" />
+                      {prog.timing}
+                    </span>
                   </div>
 
+                  <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed line-clamp-3">
+                    {prog.description}
+                  </p>
                 </div>
 
-                {/* 4. Two Equal-Sized Buttons: Learn More & Enquiry */}
-                <div className="pt-4 mt-5 border-t border-slate-100/80 grid grid-cols-2 gap-2.5">
-                  <button
+                {/* 8-State Button Triggers */}
+                <div className="pt-6 border-t border-slate-100 flex items-center justify-between gap-3 mt-4">
+                  <Button
                     onClick={() => setSelectedProgram(prog)}
-                    id={`prog-learn-more-${prog.id}`}
-                    className="py-2.5 px-3 rounded-full text-xs font-bold text-blue-700 bg-blue-50/90 hover:bg-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-[0.98]"
+                    variant="outline"
+                    size="sm"
+                    className="w-1/2 justify-center"
                   >
-                    <span>Learn More</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  </button>
+                    Details
+                  </Button>
 
-                  <button
+                  <Button
                     onClick={() => onEnrollProgram(prog.title)}
-                    id={`prog-enquiry-btn-${prog.id}`}
-                    className="py-2.5 px-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 bg-[length:200%_auto] hover:bg-right transition-all duration-500 shadow-md shadow-blue-500/20 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-1 cursor-pointer"
+                    variant="primary"
+                    size="sm"
+                    className="w-1/2 justify-center"
                   >
-                    <span>Enquiry</span>
-                    <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-                  </button>
+                    <span>Enroll</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
-
-              </div>
+              </Card>
             );
           })}
         </div>
 
       </div>
 
-      {/* Program Detail Glassmorphism Modal */}
+      {/* Program Details Modal */}
       <ProgramModal
         program={selectedProgram}
         onClose={() => setSelectedProgram(null)}
-        onEnroll={onEnrollProgram}
+        onEnroll={(title) => {
+          setSelectedProgram(null);
+          onEnrollProgram(title);
+        }}
       />
     </section>
   );
 };
-

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Menu, X, ChevronRight } from 'lucide-react';
+import { Button } from './ui/Button';
 
 interface NavbarProps {
   onOpenEnroll: () => void;
@@ -24,20 +25,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Toggle sticky header solid glass vs transparent/light glass
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 30);
 
-      // Check if user is near top of page -> highlight home
       if (window.scrollY < 120) {
         setActiveSection('home');
         return;
       }
 
-      // Check if user reached very bottom of page -> highlight contact
       const isAtBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
       if (isAtBottom) {
@@ -45,7 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
         return;
       }
 
-      // Ordered list of section IDs on the page and their corresponding nav IDs
       const sectionMapping: { id: string; targetNav: string }[] = [
         { id: 'home', targetNav: 'home' },
         { id: 'about', targetNav: 'about' },
@@ -57,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
         { id: 'contact', targetNav: 'contact' },
       ];
 
-      const scrollPos = window.scrollY + 180; // Focal point offset from top
+      const scrollPos = window.scrollY + 180;
       let currentActive = 'home';
 
       for (const item of sectionMapping) {
@@ -74,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -86,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     if (element) {
-      const navOffset = 96; // Header height + spacing offset
+      const navOffset = 96;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - navOffset;
 
@@ -105,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
         className={`mx-auto max-w-7xl transition-all duration-500 rounded-full ${
           scrolled
             ? 'bg-white/90 backdrop-blur-2xl border border-white/90 shadow-[0_12px_40px_rgba(37,99,235,0.14)] py-2.5 px-5 sm:px-7'
-            : 'bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgba(37,99,235,0.06)] py-3.5 px-6 sm:px-8'
+            : 'bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgba(37,99,235,0.06)] py-3.5 px-6 sm:px-8'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -117,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
             id="nav-logo-link"
           >
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 via-sky-500 to-cyan-400 p-0.5 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-white/90 backdrop-blur-md rounded-[14px] flex items-center justify-center">
+              <div className="w-full h-full bg-white/95 backdrop-blur-md rounded-[14px] flex items-center justify-center">
                 <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 animate-pulse" />
               </div>
             </div>
@@ -131,8 +124,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
             </div>
           </a>
 
-          {/* Desktop Nav Links with Sliding Active Pill */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-white/50 p-1.5 rounded-full border border-white/70 backdrop-blur-md shadow-inner relative">
+          {/* Hallmark N5 Desktop Nav Links with Sliding Active Pill */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-white/60 p-1.5 rounded-full border border-white/80 backdrop-blur-md shadow-inner relative">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -145,7 +138,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                     isActive ? 'text-white' : 'text-slate-600 hover:text-blue-600'
                   }`}
                 >
-                  {/* Sliding Active Pill Background */}
                   {isActive && (
                     <motion.div
                       layoutId="activeNavTabPill"
@@ -163,22 +155,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
             })}
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Button */}
           <div className="hidden sm:flex items-center gap-2.5">
-            <button
-              onClick={onOpenEnroll}
-              id="nav-enroll-btn"
-              className="reflection-shine px-6 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 bg-[length:200%_auto] hover:bg-right transition-all duration-500 rounded-full shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 border border-white/30 flex items-center gap-1.5 cursor-pointer"
-            >
+            <Button onClick={onOpenEnroll} id="nav-enroll-btn" size="sm" variant="primary">
               <span>Enroll Now</span>
               <ChevronRight className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-2xl bg-white/80 border border-white/90 text-slate-700 hover:bg-white shadow-sm transition-all"
+            className="lg:hidden p-2.5 rounded-2xl bg-white/80 border border-white/90 text-slate-700 hover:bg-white shadow-sm transition-all cursor-pointer"
             aria-label="Toggle menu"
             id="nav-mobile-toggle"
           >
@@ -216,16 +204,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
               );
             })}
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5 mt-2">
-              <button
+              <Button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenEnroll();
                 }}
-                className="w-full py-3 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-sky-500 rounded-2xl shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                className="w-full justify-center"
+                size="md"
+                variant="primary"
               >
                 <span>Enroll Now</span>
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </Button>
             </div>
           </div>
         </motion.div>
@@ -233,4 +223,3 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
     </header>
   );
 };
-
