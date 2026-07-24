@@ -1,32 +1,9 @@
-import React, { useState } from 'react';
-import { Compass, Eye, Heart, Sparkles, Award, ShieldCheck, Smile, BookOpen, UserCheck, Star } from 'lucide-react';
+import React from 'react';
+import { Compass, Eye, Heart, Sparkles, Award, ShieldCheck, Smile, UserCheck, Star } from 'lucide-react';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
 
 export const MissionVision: React.FC = () => {
-  const [missionRotate, setMissionRotate] = useState({ x: 0, y: 0 });
-  const [visionRotate, setVisionRotate] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLDivElement>,
-    setter: React.Dispatch<React.SetStateAction<{ x: number; y: number }>>
-  ) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    setter({
-      x: (y / rect.height) * -8,
-      y: (x / rect.width) * 8
-    });
-  };
-
-  const handleMouseLeave = (
-    setter: React.Dispatch<React.SetStateAction<{ x: number; y: number }>>
-  ) => {
-    setter({ x: 0, y: 0 });
-  };
-
   const corePillars = [
     {
       icon: ShieldCheck,
@@ -65,15 +42,15 @@ export const MissionVision: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-200/25 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
       <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-200/35 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
 
-      {/* Floating Badges */}
-      <div className="hidden lg:block absolute top-24 right-12 animate-float-reverse pointer-events-none z-10">
+      {/* Floating Badge */}
+      <div className="hidden lg:block absolute top-20 right-12 animate-float-reverse pointer-events-none z-10">
         <Badge variant="sky" className="bg-white/85 backdrop-blur-md shadow-md py-2 px-4">
           <Award className="w-4 h-4 text-sky-500" />
           <span>World-Class Standard</span>
         </Badge>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -90,79 +67,67 @@ export const MissionVision: React.FC = () => {
           </p>
         </div>
 
-        {/* 3D Glass Orbs: Mission & Vision */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-16">
+        {/* Mission & Vision Rectangular Bento Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           
-          {/* Mission Circle */}
-          <div className="animate-float-slow">
-            <div
-              onMouseMove={(e) => handleMouseMove(e, setMissionRotate)}
-              onMouseLeave={() => handleMouseLeave(setMissionRotate)}
-              style={{
-                transform: `perspective(1000px) rotateX(${missionRotate.x}deg) rotateY(${missionRotate.y}deg)`,
-                transition: 'transform 0.25s ease-out'
-              }}
-              className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full p-1 bg-gradient-to-tr from-blue-500 via-sky-400 to-cyan-300 shadow-[0_20px_60px_rgba(37,99,235,0.18)] hover:shadow-[0_25px_70px_rgba(37,99,235,0.28)] transition-all duration-300 group cursor-pointer"
-            >
-              <div className="w-full h-full rounded-full bg-white border border-slate-100 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-inner">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 p-0.5 shadow-md shadow-blue-500/30 mb-3 group-hover:scale-110 transition-transform">
-                  <div className="w-full h-full bg-white/90 rounded-full flex items-center justify-center">
-                    <Compass className="w-8 h-8 text-blue-600" />
-                  </div>
+          {/* Mission Card */}
+          <Card className="p-8 sm:p-10 flex flex-col justify-between group relative overflow-hidden border-blue-100/80 hover:border-blue-300">
+            <div className="space-y-4 relative z-10">
+              <div className="flex items-center justify-between">
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs group-hover:scale-110 transition-transform duration-300">
+                  <Compass className="w-7 h-7" />
                 </div>
-
-                <span className="text-[11px] font-extrabold text-blue-600 uppercase tracking-widest mb-1">
+                <span className="text-[11px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-blue-700 tracking-wider uppercase border border-blue-100">
                   OUR PHILOSOPHY
                 </span>
-
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-                  Our Mission
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  To provide a safe, joyful, and stimulating environment where toddlers explore curiosity, build foundational social skills, and unlock their unique potential through play-based discovery.
-                </p>
               </div>
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors pt-2">
+                Our Mission
+              </h3>
+
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+                To provide a safe, joyful, and stimulating environment where toddlers explore curiosity, build foundational social skills, and unlock their unique potential through play-based discovery.
+              </p>
             </div>
-          </div>
 
-          {/* Vision Circle */}
-          <div className="animate-float-reverse">
-            <div
-              onMouseMove={(e) => handleMouseMove(e, setVisionRotate)}
-              onMouseLeave={() => handleMouseLeave(setVisionRotate)}
-              style={{
-                transform: `perspective(1000px) rotateX(${visionRotate.x}deg) rotateY(${visionRotate.y}deg)`,
-                transition: 'transform 0.25s ease-out'
-              }}
-              className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full p-1 bg-gradient-to-tr from-sky-400 via-blue-600 to-indigo-500 shadow-[0_20px_60px_rgba(37,99,235,0.18)] hover:shadow-[0_25px_70px_rgba(37,99,235,0.28)] transition-all duration-300 group cursor-pointer"
-            >
-              <div className="w-full h-full rounded-full bg-white border border-slate-100 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-inner">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 p-0.5 shadow-md shadow-blue-500/30 mb-3 group-hover:scale-110 transition-transform">
-                  <div className="w-full h-full bg-white/90 rounded-full flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-sky-600" />
-                  </div>
+            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-blue-600">
+              <Sparkles className="w-4 h-4 text-blue-500" />
+              <span>Nurturing Curiosity Every Day</span>
+            </div>
+          </Card>
+
+          {/* Vision Card */}
+          <Card className="p-8 sm:p-10 flex flex-col justify-between group relative overflow-hidden border-sky-100/80 hover:border-sky-300">
+            <div className="space-y-4 relative z-10">
+              <div className="flex items-center justify-between">
+                <div className="w-14 h-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shadow-xs group-hover:scale-110 transition-transform duration-300">
+                  <Eye className="w-7 h-7" />
                 </div>
-
-                <span className="text-[11px] font-extrabold text-sky-600 uppercase tracking-widest mb-1">
+                <span className="text-[11px] font-extrabold px-3 py-1 rounded-full bg-sky-50 text-sky-700 tracking-wider uppercase border border-sky-100">
                   OUR HORIZON
                 </span>
-
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-                  Our Vision
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                  To set the standard in early childhood learning by inspiring happy, resilient, and creative lifelong learners empowered to thrive in tomorrow's world.
-                </p>
               </div>
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors pt-2">
+                Our Vision
+              </h3>
+
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+                To set the standard in early childhood learning by inspiring happy, resilient, and creative lifelong learners empowered to thrive in tomorrow's world.
+              </p>
             </div>
-          </div>
+
+            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-sky-600">
+              <Award className="w-4 h-4 text-sky-500" />
+              <span>Empowering Future Leaders</span>
+            </div>
+          </Card>
 
         </div>
 
         {/* Core Pillars Bento Grid */}
-        <div className="space-y-8 pt-8">
+        <div className="space-y-8 pt-4">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Four Pillars of Our Care
