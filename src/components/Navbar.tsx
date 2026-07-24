@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { Button } from './ui/Button';
+import logoImg from '../assets/logo-littles.png';
 
 interface NavbarProps {
   onOpenEnroll: () => void;
@@ -27,7 +28,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      setScrolled(currentScrollPos > 25);
+      const isScrolled = currentScrollPos > 20;
+      setScrolled(isScrolled);
 
       const isScrollingUp = prevScrollPos.current > currentScrollPos;
       const isNearTop = currentScrollPos < 80;
@@ -112,14 +114,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-2.5 group cursor-pointer select-none"
+            className="flex items-center gap-3 group cursor-pointer select-none"
             id="nav-logo-link"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 via-sky-500 to-cyan-400 p-0.5 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-white/95 backdrop-blur-md rounded-[14px] flex items-center justify-center">
-                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 animate-pulse" />
-              </div>
-            </div>
+            <img
+              src={logoImg}
+              alt="Little's Heaven Logo"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
+            />
             <div>
               <span className="text-base sm:text-lg font-extrabold font-sans tracking-tight text-slate-900 block leading-none">
                 Little's Heaven

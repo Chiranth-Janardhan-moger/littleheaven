@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import logoImg from '../assets/logo-littles.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,13 +9,20 @@ export const Footer: React.FC = () => {
         
         {/* Hallmark Ft5 Statement Status Indicator */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-12 border-b border-slate-800/80">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Little's Heaven Child Care & Early Learning
-            </h2>
-            <p className="text-slate-400 text-sm mt-1">
-              Inspiring young minds to learn, grow, and shine every day in a safe, clean, and nurturing early education sanctuary.
-            </p>
+          <div className="flex items-center gap-4">
+            <img
+              src={logoImg}
+              alt="Little's Heaven Logo"
+              className="h-12 sm:h-14 w-auto object-contain bg-white/10 p-1.5 rounded-2xl backdrop-blur-md border border-white/10"
+            />
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Little's Heaven Child Care & Early Learning
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Inspiring young minds to learn, grow, and shine every day in a safe, clean, and nurturing early education sanctuary.
+              </p>
+            </div>
           </div>
         </div>
 
