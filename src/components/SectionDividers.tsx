@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Sparkles, Star, Heart, Sun, Cloud, Smile, Palette, Compass, Flower2, Footprints } from 'lucide-react';
 
 /**
@@ -72,57 +73,52 @@ export const HeroToMissionDivider: React.FC = () => {
 
 /**
  * Divider 2: About -> Programs (MissionToProgramsDivider)
- * Concept: Curved dotted path like children walking along a fun path. Blue dots, dashed curves, tiny stars, glowing circles.
+ * Concept: Sequential animated toddler footsteps walking from left to right as user scrolls into view.
  */
 export const MissionToProgramsDivider: React.FC = () => {
+  const steps = [
+    { x: '5%', y: '45%', rotate: -18, scale: 0.85 },
+    { x: '15%', y: '65%', rotate: 18, scale: 0.85 },
+    { x: '25%', y: '35%', rotate: -15, scale: 0.9 },
+    { x: '35%', y: '60%', rotate: 20, scale: 0.9 },
+    { x: '45%', y: '40%', rotate: -16, scale: 0.95 },
+    { x: '55%', y: '65%', rotate: 16, scale: 0.95 },
+    { x: '65%', y: '35%', rotate: -14, scale: 1 },
+    { x: '75%', y: '60%', rotate: 18, scale: 1 },
+    { x: '85%', y: '40%', rotate: -15, scale: 1.05 },
+    { x: '95%', y: '65%', rotate: 15, scale: 1.05 },
+  ];
+
   return (
-    <div className="relative w-full py-10 overflow-hidden bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-blue-50/20">
-      <div className="relative mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
-        
-        {/* Left Solid White Badge */}
-        <div className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-100 shadow-md shadow-blue-500/10 text-xs font-extrabold text-blue-700 select-none">
-          <Footprints className="w-4 h-4 text-blue-600" />
-          <span>Little Footsteps</span>
-        </div>
+    <div className="relative w-full py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-blue-50/20">
+      
+      {/* Soft Glow Horizon */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-16 bg-gradient-to-r from-blue-500/10 via-sky-400/20 to-cyan-500/10 blur-xl pointer-events-none" />
 
-        {/* Sleek Gradient Connecting Line */}
-        <div className="flex-1 w-full mx-4 relative h-10 flex items-center justify-center">
-          <svg
-            className="w-full h-8 overflow-visible"
-            viewBox="0 0 800 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
+      {/* Walking Toddler Footsteps Trail */}
+      <div className="relative mx-auto max-w-7xl px-4 h-16 sm:h-20 flex items-center justify-between pointer-events-none">
+        {steps.map((step, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, scale: 0, y: 15 }}
+            whileInView={{ opacity: 1, scale: step.scale, y: 0 }}
+            viewport={{ once: true, margin: '-20px' }}
+            transition={{
+              duration: 0.4,
+              delay: idx * 0.12,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            style={{
+              position: 'absolute',
+              left: step.x,
+              top: step.y,
+              transform: `translate(-50%, -50%) rotate(${step.rotate}deg)`
+            }}
+            className="text-blue-600/80 drop-shadow-[0_4px_10px_rgba(37,99,235,0.22)]"
           >
-            <defs>
-              <linearGradient id="cleanPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#0284c7" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-
-            <path
-              d="M0 20 Q 200 5, 400 20 T 800 20"
-              stroke="url(#cleanPathGrad)"
-              strokeWidth="2.5"
-              strokeDasharray="6 6"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          {/* Central Icon Badge */}
-          <div className="absolute left-1/2 -translate-x-1/2 p-2.5 rounded-full bg-white shadow-md shadow-blue-500/15 border border-slate-100 text-blue-600">
-            <Smile className="w-4 h-4 text-sky-500" />
-          </div>
-        </div>
-
-        {/* Right Solid White Badge */}
-        <div className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-100 shadow-md shadow-blue-500/10 text-xs font-extrabold text-sky-700 select-none">
-          <Sun className="w-4 h-4 text-amber-500" />
-          <span>Bright Futures</span>
-        </div>
-
+            <Footprints className="w-6 h-6 sm:w-7 sm:h-7" />
+          </motion.div>
+        ))}
       </div>
     </div>
   );
