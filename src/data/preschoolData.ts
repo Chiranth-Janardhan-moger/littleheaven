@@ -224,14 +224,6 @@ export const WHY_FEATURES: WhyFeature[] = [
     highlight: 'Biometric entry and double-gated perimeter security'
   },
   {
-    id: 'why-3',
-    title: 'CCTV Surveillance',
-    badge: 'Live Parent Access',
-    icon: 'Video',
-    description: 'Encrypted HD camera feeds accessible to parents via secure mobile app anytime during school hours.',
-    highlight: 'Real-time transparency and total parent peace of mind'
-  },
-  {
     id: 'why-4',
     title: 'Activity Based Learning',
     badge: 'Hand-on Discovery',
