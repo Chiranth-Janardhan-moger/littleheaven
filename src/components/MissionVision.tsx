@@ -1,6 +1,5 @@
 import React from 'react';
-import { Compass, Eye, Heart, Sparkles, Award, ShieldCheck, Smile, UserCheck } from 'lucide-react';
-import { Badge } from './ui/Badge';
+import { Compass, Eye, Heart, Sparkles, ShieldCheck, Smile, UserCheck, CheckCircle2 } from 'lucide-react';
 import { Card } from './ui/Card';
 
 export const MissionVision: React.FC = () => {
@@ -8,150 +7,142 @@ export const MissionVision: React.FC = () => {
     {
       icon: ShieldCheck,
       title: 'Safety Sanctuary',
-      description: 'CCTV monitored campus, child-safe ergonomic play zones, and strict 1:8 teacher-to-child supervision ratio.',
+      description: 'CCTV monitored campus, child-safe ergonomic play zones & 1:8 supervision.',
       badgeText: '100% Secure',
       iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-100'
     },
     {
       icon: Sparkles,
       title: 'Play-Based Mastery',
-      description: 'Hands-on sensory exploration, creative arts, and early STEM discovery tailored for toddlers and preschoolers.',
+      description: 'Hands-on sensory exploration, creative arts & early STEM discovery.',
       badgeText: 'Holistic Growth',
       iconBg: 'bg-blue-50 text-blue-600 border-blue-100'
     },
     {
       icon: UserCheck,
       title: 'Certified Educators',
-      description: 'Passionate, background-checked early childhood specialists trained in Montessori and reggio emilia methodologies.',
+      description: 'Montessori & Reggio Emilia trained early childhood specialists.',
       badgeText: 'Expert Staff',
       iconBg: 'bg-sky-50 text-sky-600 border-sky-100'
     },
     {
       icon: Smile,
-      title: 'Warm Nurturing Environment',
-      description: 'A second home where emotional well-being, empathy, and positive social interaction flourish every day.',
+      title: 'Warm Nurturing',
+      description: 'A second home where emotional warmth and social empathy flourish.',
       badgeText: 'Joy First',
       iconBg: 'bg-amber-50 text-amber-600 border-amber-100'
     }
   ];
 
   return (
-    <section id="about" className="relative py-20 lg:py-28 bg-gradient-to-b from-white via-sky-50/30 to-blue-50/20 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-sky-50/20 to-blue-50/20 overflow-hidden">
       
-      {/* Background ambient glowing circles */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-200/25 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-200/35 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
+      {/* Soft Background Aura Glows */}
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
+      <div className="absolute bottom-10 right-1/3 w-96 h-96 bg-sky-200/25 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
 
-      {/* Floating Badge */}
-      <div className="hidden lg:block absolute top-20 right-12 animate-float-reverse pointer-events-none z-10">
-        <Badge variant="sky" className="bg-white/85 backdrop-blur-md shadow-md py-2 px-4">
-          <Award className="w-4 h-4 text-sky-500" />
-          <span>World-Class Standard</span>
-        </Badge>
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="primary">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase">
             <Heart className="w-3.5 h-3.5 text-blue-600 fill-blue-500/20" />
             <span>About Little's Heaven</span>
-          </Badge>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Where Early Wonder Meets <br />
             <span className="text-gradient-primary">Nurturing Foundation</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Founded with a vision to create a safe, vibrant, and inspiring early childhood sanctuary, Little's Heaven provides every child with the emotional warmth, intellectual curiosity, and creative confidence to shine.
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-medium">
+            Founded to create an inspiring early childhood sanctuary where every child gains emotional warmth, intellectual curiosity, and creative confidence.
           </p>
         </div>
 
-        {/* Mission & Vision Rectangular Bento Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        {/* Compact & Beautiful Mission & Vision Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           
           {/* Mission Card */}
-          <Card className="p-8 sm:p-10 flex flex-col justify-between group relative overflow-hidden border-blue-100/80 hover:border-blue-300">
-            <div className="space-y-4 relative z-10">
+          <Card className="p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden border border-slate-100 hover:border-blue-300 transition-all duration-300">
+            <div className="space-y-3 relative z-10">
               <div className="flex items-center justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs group-hover:scale-110 transition-transform duration-300">
-                  <Compass className="w-7 h-7" />
+                <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs group-hover:scale-105 transition-transform duration-300">
+                  <Compass className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[11px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-blue-700 tracking-wider uppercase border border-blue-100">
+                <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-blue-700 tracking-wider uppercase border border-blue-100">
                   OUR PHILOSOPHY
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors pt-2">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors pt-1">
                 Our Mission
               </h3>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-                To provide a safe, joyful, and stimulating environment where toddlers explore curiosity, build foundational social skills, and unlock their unique potential through play-based discovery.
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                To provide a safe, joyful, and stimulating sanctuary where toddlers explore curiosity, build foundational social skills, and unlock their potential through play-based discovery.
               </p>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-blue-600">
-              <Sparkles className="w-4 h-4 text-blue-500" />
-              <span>Nurturing Curiosity Every Day</span>
+            <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-blue-600">
+              <CheckCircle2 className="w-3.5 h-3.5 text-blue-500" />
+              <span>Nurturing Curiosity & Play-Based Learning</span>
             </div>
           </Card>
 
           {/* Vision Card */}
-          <Card className="p-8 sm:p-10 flex flex-col justify-between group relative overflow-hidden border-sky-100/80 hover:border-sky-300">
-            <div className="space-y-4 relative z-10">
+          <Card className="p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden border border-slate-100 hover:border-sky-300 transition-all duration-300">
+            <div className="space-y-3 relative z-10">
               <div className="flex items-center justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shadow-xs group-hover:scale-110 transition-transform duration-300">
-                  <Eye className="w-7 h-7" />
+                <div className="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shadow-xs group-hover:scale-105 transition-transform duration-300">
+                  <Eye className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-[11px] font-extrabold px-3 py-1 rounded-full bg-sky-50 text-sky-700 tracking-wider uppercase border border-sky-100">
+                <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-sky-50 text-sky-700 tracking-wider uppercase border border-sky-100">
                   OUR HORIZON
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors pt-2">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors pt-1">
                 Our Vision
               </h3>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-                To set the standard in early childhood learning by inspiring happy, resilient, and creative lifelong learners empowered to thrive in tomorrow's world.
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                To set the benchmark in early childhood care by inspiring happy, resilient, and creative lifelong learners empowered to thrive in tomorrow’s world.
               </p>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-sky-600">
-              <Award className="w-4 h-4 text-sky-500" />
-              <span>Empowering Future Leaders</span>
+            <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-sky-600">
+              <CheckCircle2 className="w-3.5 h-3.5 text-sky-500" />
+              <span>Empowering Lifelong Creative Minds</span>
             </div>
           </Card>
 
         </div>
 
-        {/* Core Pillars Bento Grid */}
-        <div className="space-y-8 pt-4">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        {/* Four Pillars of Our Care */}
+        <div className="space-y-6 pt-2">
+          <div className="text-center max-w-xl mx-auto space-y-1.5">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
               Four Pillars of Our Care
             </h3>
-            <p className="text-slate-600 text-sm">
-              The core principles that guide our educators every day.
+            <p className="text-slate-500 text-xs sm:text-sm font-medium">
+              The foundational principles guiding our educators every single day.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {corePillars.map((pillar, idx) => {
               const IconComp = pillar.icon;
               return (
-                <Card key={idx} className="space-y-4 p-6 flex flex-col justify-between group">
-                  <div className="space-y-3">
+                <Card key={idx} className="p-5 flex flex-col justify-between group border border-slate-100 hover:border-blue-200">
+                  <div className="space-y-2.5">
                     <div className="flex items-center justify-between">
-                      <div className={`w-12 h-12 rounded-2xl ${pillar.iconBg} border flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComp className="w-6 h-6" />
+                      <div className={`w-10 h-10 rounded-xl ${pillar.iconBg} border flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300`}>
+                        <IconComp className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+                      <span className="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-slate-50 text-slate-600 border border-slate-100">
                         {pillar.badgeText}
                       </span>
                     </div>
-                    <h4 className="text-lg font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <h4 className="text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
                       {pillar.title}
                     </h4>
                     <p className="text-slate-600 text-xs leading-relaxed font-medium">
@@ -163,6 +154,7 @@ export const MissionVision: React.FC = () => {
             })}
           </div>
         </div>
+
       </div>
     </section>
   );
