@@ -374,14 +374,6 @@ export const ReviewsToContactDivider: React.FC = () => {
         />
       </svg>
 
-      {/* Big Bold Headline Badge */}
-      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2.5 px-6 py-3 rounded-full bg-white border border-slate-100 shadow-lg shadow-blue-500/10">
-          <Sparkles className="w-6 h-6 text-blue-600" />
-          <span>Get in Touch With Us</span>
-        </h2>
-      </div>
-
     </div>
   );
 };

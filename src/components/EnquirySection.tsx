@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, ExternalLink, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface EnquirySectionProps {
   initialProgramTitle?: string;
@@ -61,6 +61,20 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
+        {/* Hallmark Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <span>Reach Out To Us</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Get in Touch With Us
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-medium">
+            Have questions about admissions, campus visits, or our early learning curriculum? Our team is always here to assist you.
+          </p>
+        </div>
+
         {/* Main 2-Column Layout matching reference layout with website theme */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
