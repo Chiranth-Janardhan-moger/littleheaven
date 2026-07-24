@@ -135,15 +135,7 @@ export const ProgramsToTimelineDivider: React.FC = () => {
       {/* Outer Blue Glow Layer */}
       <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-r from-blue-600/25 via-sky-400/35 to-cyan-500/25 blur-xl" />
 
-      {/* Floating Particles & Stars */}
-      <div className="absolute top-4 inset-x-0 flex justify-between px-8 sm:px-28 z-20 pointer-events-none opacity-90">
-        <Sparkles className="w-5 h-5 text-cyan-500 animate-float-slow drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-blue-300 shadow-md shadow-sky-500/20 text-xs font-extrabold text-blue-900">
-          <Palette className="w-4 h-4 text-cyan-500 drop-shadow-[0_0_6px_rgba(6,182,212,0.8)]" />
-          <span>Interactive Routine Flow</span>
-        </div>
-        <Flower2 className="w-5 h-5 text-sky-400 animate-float-reverse hidden sm:block drop-shadow-[0_0_6px_rgba(56,189,248,0.8)]" />
-      </div>
+
 
       {/* Ribbon-Style Wave SVG */}
       <svg
