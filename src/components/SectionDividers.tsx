@@ -145,6 +145,7 @@ export const MissionToProgramsDivider: React.FC = () => {
                 src={footImg}
                 alt="Footprint"
                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain text-blue-600"
+                style={{ transform: 'rotate(90deg)' }}
               />
             ) : (
               <ToddlerFootprint isRightFoot={false} className="w-8 h-6 sm:w-9 sm:h-7 text-blue-600" />
