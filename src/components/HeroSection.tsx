@@ -69,57 +69,63 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
 
           </div>
 
-          {/* Right Showcase Column */}
-          <div className="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0 py-2">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md lg:max-w-none">
+          {/* Right Showcase Column (Staggered 2-Column Grid) */}
+          <div className="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0 py-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md lg:max-w-none items-center">
               
-              <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
-                  alt="Toddler learning with blocks"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute top-3 left-3 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-sky-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg -rotate-12 border-2 border-white">
-                  A
+              {/* Column 1: Shifted Slightly Upwards */}
+              <div className="flex flex-col gap-3 sm:gap-4 -translate-y-4 sm:-translate-y-6">
+                <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
+                  <img
+                    src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
+                    alt="Toddler learning with blocks"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 left-3 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-sky-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg -rotate-12 border-2 border-white">
+                    A
+                  </div>
+                </div>
+
+                <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
+                  <img
+                    src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop"
+                    alt="Toddler girl playing"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 z-10 w-9 h-9 sm:w-11 sm:h-11 bg-rose-500 text-white rounded-2xl flex items-center justify-center font-black text-lg shadow-lg -rotate-6 border-2 border-white">
+                    B
+                  </div>
                 </div>
               </div>
 
-              <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
-                  alt="Smiling preschool student"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute top-3 right-3 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-amber-400 text-amber-950 rounded-2xl flex items-center justify-center shadow-lg rotate-12 border-2 border-white">
-                  <span className="text-xl">💡</span>
+              {/* Column 2: Shifted Slightly Downwards */}
+              <div className="flex flex-col gap-3 sm:gap-4 translate-y-4 sm:translate-y-6">
+                <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
+                  <img
+                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
+                    alt="Smiling preschool student"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 right-3 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-amber-400 text-amber-950 rounded-2xl flex items-center justify-center shadow-lg rotate-12 border-2 border-white">
+                    <span className="text-xl">💡</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop"
-                  alt="Toddler girl playing"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 z-10 w-9 h-9 sm:w-11 sm:h-11 bg-rose-500 text-white rounded-2xl flex items-center justify-center font-black text-lg shadow-lg -rotate-6 border-2 border-white">
-                  B
+                <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
+                  <img
+                    src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=800&auto=format&fit=crop"
+                    alt="Boy playing with toys"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
-              </div>
-
-              <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=800&auto=format&fit=crop"
-                  alt="Boy playing with toys"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
               </div>
 
             </div>
