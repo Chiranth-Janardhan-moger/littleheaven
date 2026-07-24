@@ -1,0 +1,69 @@
+import React from 'react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="relative bg-[#0A1128] text-white pt-16 pb-10 overflow-hidden border-t border-slate-800">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        
+        {/* Top 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+          
+          {/* Column 1: Brand & Tagline */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold tracking-tight text-white">
+              Little's Heaven Child Care & Early Learning
+            </h3>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-sm">
+              Inspiring young minds to learn, grow, and shine every day in a safe, clean, and nurturing early education sanctuary.
+            </p>
+          </div>
+
+          {/* Column 2: Contact Us */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold tracking-tight text-white">
+              Contact Us
+            </h3>
+            <ul className="space-y-3 text-slate-300 text-sm sm:text-base">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-slate-300 shrink-0 mt-0.5" />
+                <span>Federal Bank, Dasarahalli Main Rd, Bhuvaneswari Nagar, Hebbal, Bengaluru, Karnataka 560024</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-slate-300 shrink-0" />
+                <a href="tel:+917736181828" className="hover:text-white transition-colors">+91 77361 81828</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-slate-300 shrink-0" />
+                <a href="mailto:contact@littlesheaven.edu.in" className="hover:text-white transition-colors">contact@littlesheaven.edu.in</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Globe className="w-5 h-5 text-slate-300 shrink-0" />
+                <a href="#home" className="hover:text-white transition-colors">www.littlesheaven.edu.in</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Quick Info */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold tracking-tight text-white">
+              Business Hours
+            </h3>
+            <div className="space-y-2.5 text-slate-300 text-sm sm:text-base">
+              <p><strong className="text-white">Monday - Friday:</strong> 6:00 AM - 7:00 PM</p>
+              <p><strong className="text-white">Saturday:</strong> Opens at 6:00 AM</p>
+              <p><strong className="text-white">Sunday:</strong> Closed</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Horizontal Line and Copyright */}
+        <div className="mt-14 sm:mt-16 pt-8 border-t border-slate-800/80 text-center sm:text-right text-slate-400 text-xs sm:text-sm font-normal">
+          <p>© 2026 Little's Heaven Child Care & Early Learning. All rights reserved.</p>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
