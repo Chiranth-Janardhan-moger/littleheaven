@@ -71,32 +71,32 @@ export const WhyChooseUs: React.FC = () => {
 
       </div>
 
-      {/* CONTINUOUS MOVING MARQUEE LINE (Front to Back Continuous Infinite Motion) */}
-      <div className="relative w-full overflow-hidden py-6 border-y border-slate-100 bg-white/60 backdrop-blur-md shadow-xs">
+      {/* CONTINUOUS MOVING MARQUEE LINE (Clean background-less ribbon) */}
+      <div className="relative w-full overflow-hidden py-6">
         
         {/* Gradient Fades on Left & Right Edges */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
 
-        {/* Animated Marquee Track with w-max for infinite seamless ribbon */}
-        <div className="flex items-center gap-6 animate-marquee-left whitespace-nowrap py-2 w-max select-none">
+        {/* Animated Marquee Track */}
+        <div className="flex items-center gap-8 animate-marquee-left whitespace-nowrap py-2 w-max select-none">
           {marqueeFeatures.map((feat, index) => {
             const IconComp = getFeatureIcon(feat.icon);
             return (
               <div
                 key={`${feat.id}-${index}`}
                 id={`why-pill-${feat.id}-${index}`}
-                className="inline-flex items-center gap-4 px-6 py-4 rounded-[28px] bg-white border border-slate-100 shadow-md shadow-slate-200/40 hover:border-blue-200 transition-all duration-300 group shrink-0"
+                className="inline-flex items-center gap-3.5 px-3 py-2 shrink-0"
               >
-                {/* Glowing Icon Badge */}
-                <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
-                  <IconComp className="w-5.5 h-5.5" />
+                {/* Icon Badge */}
+                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-xs">
+                  <IconComp className="w-5 h-5" />
                 </div>
 
                 {/* Text & Badge */}
                 <div>
-                  <div className="text-[11px] font-extrabold text-blue-600 uppercase tracking-widest flex items-center gap-1">
-                    <span>{feat.badge}</span>
+                  <div className="text-[10px] font-extrabold text-blue-600 uppercase tracking-widest">
+                    {feat.badge}
                   </div>
                   <div className="text-sm font-extrabold text-slate-900">
                     {feat.title}
