@@ -137,6 +137,11 @@
   100% { transform: translateX(-33.333333%); }
 }
 
+@keyframes marqueeRight {
+  0% { transform: translateX(-33.333333%); }
+  100% { transform: translateX(0); }
+}
+
 /* Silky Smooth 3D Physical Book Page Flip Animations */
 @keyframes flipLeafNext {
   0% {
@@ -186,6 +191,15 @@
 }
 
 .animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right:hover {
   animation-play-state: paused;
 }
 
