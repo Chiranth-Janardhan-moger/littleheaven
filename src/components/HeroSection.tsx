@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HERO_STATS } from '../data/preschoolData';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, Heart } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
             
             {/* Live Status Pill */}
             <Badge variant="primary" className="bg-white/90 border-white backdrop-blur-xl shadow-xs">
-              <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-ping mr-1" />
+              <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 mr-1" />
               <span>Admissions Open 2026-27</span>
               <Sparkles className="w-3.5 h-3.5 text-sky-500 ml-1" />
             </Badge>
