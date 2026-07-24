@@ -76,89 +76,54 @@ export const HeroToMissionDivider: React.FC = () => {
  */
 export const MissionToProgramsDivider: React.FC = () => {
   return (
-    <div className="relative w-full py-8 overflow-hidden bg-gradient-to-b from-sky-50/60 via-white to-blue-50/50">
-      
-      {/* Soft Glow Background Horizon */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-16 bg-gradient-to-r from-blue-500/20 via-sky-400/30 to-cyan-500/20 blur-xl pointer-events-none" />
-
-      {/* Interactive Winding Path Container */}
-      <div className="relative mx-auto max-w-7xl px-4 flex items-center justify-between">
+    <div className="relative w-full py-10 overflow-hidden bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-blue-50/20">
+      <div className="relative mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
         
-        {/* Left Floating Badge */}
-        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 border border-blue-300 shadow-md shadow-sky-500/20 text-xs font-bold text-blue-700 animate-float-slow">
-          <Footprints className="w-4 h-4 text-cyan-500" />
+        {/* Left Solid White Badge */}
+        <div className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-100 shadow-md shadow-blue-500/10 text-xs font-extrabold text-blue-700 select-none">
+          <Footprints className="w-4 h-4 text-blue-600" />
           <span>Little Footsteps</span>
         </div>
 
-        {/* Curved Dotted Path SVG */}
-        <div className="flex-1 mx-2 sm:mx-8 relative h-16 sm:h-20 flex items-center justify-center">
+        {/* Sleek Gradient Connecting Line */}
+        <div className="flex-1 w-full mx-4 relative h-10 flex items-center justify-center">
           <svg
-            className="w-full h-full overflow-visible drop-shadow-[0_4px_12px_rgba(37,99,235,0.3)]"
-            viewBox="0 0 800 60"
+            className="w-full h-8 overflow-visible"
+            viewBox="0 0 800 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
             <defs>
-              <linearGradient id="childPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2563eb" />
-                <stop offset="50%" stopColor="#38bdf8" />
-                <stop offset="100%" stopColor="#06b6d4" />
+              <linearGradient id="cleanPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#0284c7" stopOpacity="0.8" />
               </linearGradient>
             </defs>
 
-            {/* Glowing Path Backdrop */}
             <path
-              d="M0 30 Q 200 0, 400 30 T 800 30"
-              stroke="url(#childPathGrad)"
-              strokeWidth="8"
-              opacity="0.2"
+              d="M0 20 Q 200 5, 400 20 T 800 20"
+              stroke="url(#cleanPathGrad)"
+              strokeWidth="2.5"
+              strokeDasharray="6 6"
               strokeLinecap="round"
             />
-
-            {/* Dashed Flowing Path */}
-            <path
-              d="M0 30 Q 200 0, 400 30 T 800 30"
-              stroke="url(#childPathGrad)"
-              strokeWidth="4"
-              strokeDasharray="9 9"
-              strokeLinecap="round"
-              className="animate-dash-flow"
-            />
-
-            {/* Glowing Waypoint Circles along the path */}
-            {[
-              { x: 150, y: 15 },
-              { x: 300, y: 28 },
-              { x: 450, y: 32 },
-              { x: 600, y: 18 },
-              { x: 720, y: 28 },
-            ].map((pt, idx) => (
-              <g key={`wpt-${idx}`}>
-                <circle cx={pt.x} cy={pt.y} r="8" fill="#38bdf8" className="animate-ping opacity-50" />
-                <circle cx={pt.x} cy={pt.y} r="5" fill="#2563eb" className="shadow-md" />
-                <circle cx={pt.x} cy={pt.y} r="2.5" fill="#ffffff" />
-              </g>
-            ))}
           </svg>
 
-          {/* Central Glowing Icon Badge */}
-          <div className="absolute left-1/2 -translate-x-1/2 p-3 rounded-full bg-white shadow-lg shadow-blue-500/25 border border-blue-300 text-blue-600 animate-pulse">
-            <Smile className="w-5 h-5 text-cyan-500" />
+          {/* Central Icon Badge */}
+          <div className="absolute left-1/2 -translate-x-1/2 p-2.5 rounded-full bg-white shadow-md shadow-blue-500/15 border border-slate-100 text-blue-600">
+            <Smile className="w-4 h-4 text-sky-500" />
           </div>
         </div>
 
-        {/* Right Floating Badge */}
-        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 border border-blue-300 shadow-md shadow-sky-500/20 text-xs font-bold text-sky-700 animate-float-reverse">
+        {/* Right Solid White Badge */}
+        <div className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-100 shadow-md shadow-blue-500/10 text-xs font-extrabold text-sky-700 select-none">
           <Sun className="w-4 h-4 text-amber-500" />
           <span>Bright Futures</span>
         </div>
 
       </div>
-
-      {/* Floating Cyan & Blue Bubbles and Tiny Stars */}
-      <div className="absolute top-2 left-1/5 w-4 h-4 rounded-full bg-cyan-400/60 blur-2xs animate-float-slow shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
-      <div className="absolute bottom-2 right-1/5 w-5 h-5 rounded-full bg-sky-400/60 blur-2xs animate-float-reverse shadow-[0_0_10px_rgba(56,189,248,0.8)]" />
     </div>
   );
 };
