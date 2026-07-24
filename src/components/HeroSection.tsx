@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { HERO_STATS } from '../data/preschoolData';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -10,7 +11,13 @@ interface HeroSectionProps {
   onExplorePrograms: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplorePrograms }) => {
+  const { scrollY } = useScroll();
+
+  // Smooth scroll parallax for the 2 hero image columns
+  const col1Y = useTransform(scrollY, [0, 800], [0, -70]);
+  const col2Y = useTransform(scrollY, [0, 800], [0, 70]);
+
   return (
     <section
       id="home"
@@ -45,18 +52,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
               Experience an ultra-modern, glassmorphic early learning sanctuary. We foster natural curiosity, emotional intelligence, and play-based discovery in a safe, loving environment.
             </p>
 
-            {/* Hallmark 8-State Interactive CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <Button onClick={onOpenEnroll} id="hero-enroll-cta" size="lg" variant="primary">
+            {/* CTA Group */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={onOpenEnroll}
+                id="hero-enroll-now-btn"
+                className="btn-shine-sweep shadow-lg shadow-blue-500/25"
+              >
                 <span>Enroll Now</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={onExplorePrograms}
+                id="hero-explore-programs-btn"
+                className="bg-white/80 hover:bg-white text-slate-800 border-slate-200 shadow-sm"
+              >
+                Explore Programs
               </Button>
             </div>
 
-            {/* Floating Statistics Bento Grid */}
-            <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-              {HERO_STATS.map((stat) => (
-                <Card key={stat.id} className="p-4 text-center flex flex-col items-center justify-center">
+            {/* Core Stats Bar */}
+            <div className="pt-6 grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto lg:mx-0">
+              {HERO_STATS.map((stat, idx) => (
+                <Card
+                  key={idx}
+                  className="p-3 sm:p-4 text-center bg-white/70 backdrop-blur-md border-white/80 shadow-xs"
+                >
                   <div className="text-2xl sm:text-3xl font-extrabold text-blue-600 tracking-tight flex items-center justify-center">
                     <span>{stat.number}</span>
                     <span className="text-sky-500">{stat.suffix}</span>
@@ -69,12 +95,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
 
           </div>
 
-          {/* Right Showcase Column (Staggered 2-Column Grid) */}
+          {/* Right Showcase Column (Staggered 2-Column Grid with Parallax) */}
           <div className="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0 py-6">
             <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md lg:max-w-none items-center">
               
-              {/* Column 1: Shifted Slightly Upwards */}
-              <div className="flex flex-col gap-3 sm:gap-4 -translate-y-4 sm:-translate-y-6">
+              {/* Column 1: Shifted Slightly Upwards & Glides Up on Scroll */}
+              <motion.div
+                style={{ y: col1Y }}
+                className="flex flex-col gap-3 sm:gap-4 -translate-y-4 sm:-translate-y-6"
+              >
                 <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
                   <img
                     src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
@@ -100,10 +129,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
                     B
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Column 2: Shifted Slightly Downwards */}
-              <div className="flex flex-col gap-3 sm:gap-4 translate-y-4 sm:translate-y-6">
+              {/* Column 2: Shifted Slightly Downwards & Glides Down on Scroll */}
+              <motion.div
+                style={{ y: col2Y }}
+                className="flex flex-col gap-3 sm:gap-4 translate-y-4 sm:translate-y-6"
+              >
                 <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
                   <img
                     src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
@@ -126,7 +158,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
-              </div>
+              </motion.div>
 
             </div>
           </div>
