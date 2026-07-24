@@ -142,15 +142,11 @@
   100% { transform: translateX(0); }
 }
 
-/* Silky Smooth 3D Physical Book Page Flip Animations */
+/* Continuous Uninterrupted 3D Physical Book Page Flip Animations */
 @keyframes flipLeafNext {
   0% {
     transform: perspective(2000px) rotateY(0deg);
     box-shadow: -4px 8px 20px rgba(0, 0, 0, 0.08);
-  }
-  50% {
-    transform: perspective(2000px) rotateY(-90deg) scale(1.015);
-    box-shadow: -20px 20px 40px rgba(37, 99, 235, 0.2);
   }
   100% {
     transform: perspective(2000px) rotateY(-180deg);
@@ -162,10 +158,6 @@
   0% {
     transform: perspective(2000px) rotateY(0deg);
     box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.08);
-  }
-  50% {
-    transform: perspective(2000px) rotateY(90deg) scale(1.015);
-    box-shadow: 20px 20px 40px rgba(37, 99, 235, 0.2);
   }
   100% {
     transform: perspective(2000px) rotateY(180deg);
@@ -206,13 +198,13 @@
 .animate-flip-leaf-next {
   transform-origin: left center;
   transform-style: preserve-3d;
-  animation: flipLeafNext 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: flipLeafNext 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   will-change: transform, box-shadow;
 }
 
 .animate-flip-leaf-prev {
   transform-origin: right center;
   transform-style: preserve-3d;
-  animation: flipLeafPrev 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: flipLeafPrev 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   will-change: transform, box-shadow;
 }

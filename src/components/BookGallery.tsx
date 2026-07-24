@@ -86,12 +86,12 @@ export const BookGallery: React.FC = () => {
     setTargetSpread(nextSpread);
     setAnimating('next');
 
-    // Complete animation smoothly at 900ms
+    // Complete animation smoothly at 650ms
     setTimeout(() => {
       setSpreadIndex(nextSpread);
       setAnimating(null);
       setTargetSpread(null);
-    }, 750);
+    }, 650);
   };
 
   const handlePrev = () => {
@@ -100,12 +100,12 @@ export const BookGallery: React.FC = () => {
     setTargetSpread(prevSpread);
     setAnimating('prev');
 
-    // Complete animation smoothly at 900ms
+    // Complete animation smoothly at 650ms
     setTimeout(() => {
       setSpreadIndex(prevSpread);
       setAnimating(null);
       setTargetSpread(null);
-    }, 750);
+    }, 650);
   };
 
   // Static underlying page items
