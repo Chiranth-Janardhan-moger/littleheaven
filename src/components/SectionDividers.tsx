@@ -71,22 +71,45 @@ export const HeroToMissionDivider: React.FC = () => {
   );
 };
 
+/* Custom Solid Filled Toddler Footprint Component (Heel on left, Toes on right) */
+const ToddlerFootprint: React.FC<{ isRightFoot?: boolean; className?: string }> = ({ isRightFoot = false, className = 'w-7 h-7' }) => {
+  return (
+    <svg
+      viewBox="0 0 36 24"
+      fill="currentColor"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Solid main foot sole pad (Heel at left x~5, Ball of foot at right x~22) */}
+      <path
+        d="M5 12 C5 7.5 8 6 13 7 C17 7.8 19 6 22 7.5 C25 9 25 15 22 16.5 C19 18 17 16.2 13 17 C8 18 5 16.5 5 12 Z"
+      />
+      {/* 5 Solid Filled Toes on Right Side (x: 28..31.5) */}
+      <circle cx="28.5" cy={isRightFoot ? "5" : "19"} r="3" />
+      <circle cx="31" cy={isRightFoot ? "9.5" : "14.5"} r="2.3" />
+      <circle cx="31.5" cy={isRightFoot ? "13.5" : "10.5"} r="2" />
+      <circle cx="30.5" cy={isRightFoot ? "17" : "7"} r="1.7" />
+      <circle cx="28.5" cy={isRightFoot ? "20" : "4"} r="1.4" />
+    </svg>
+  );
+};
+
 /**
  * Divider 2: About -> Programs (MissionToProgramsDivider)
- * Concept: Sequential animated toddler footsteps walking from left to right as user scrolls into view.
+ * Concept: Sequential animated solid filled toddler footsteps walking from left to right.
  */
 export const MissionToProgramsDivider: React.FC = () => {
   const steps = [
-    { x: '5%', y: '45%', rotate: 75, scale: 0.85 },
-    { x: '15%', y: '60%', rotate: 105, scale: 0.85 },
-    { x: '25%', y: '40%', rotate: 78, scale: 0.9 },
-    { x: '35%', y: '58%', rotate: 102, scale: 0.9 },
-    { x: '45%', y: '42%', rotate: 76, scale: 0.95 },
-    { x: '55%', y: '60%', rotate: 104, scale: 0.95 },
-    { x: '65%', y: '40%', rotate: 78, scale: 1 },
-    { x: '75%', y: '58%', rotate: 102, scale: 1 },
-    { x: '85%', y: '42%', rotate: 75, scale: 1.05 },
-    { x: '95%', y: '60%', rotate: 105, scale: 1.05 },
+    { x: '5%', y: '45%', rotate: -8, scale: 0.85, isRight: false },
+    { x: '15%', y: '60%', rotate: 8, scale: 0.85, isRight: true },
+    { x: '25%', y: '40%', rotate: -8, scale: 0.9, isRight: false },
+    { x: '35%', y: '58%', rotate: 8, scale: 0.9, isRight: true },
+    { x: '45%', y: '42%', rotate: -8, scale: 0.95, isRight: false },
+    { x: '55%', y: '60%', rotate: 8, scale: 0.95, isRight: true },
+    { x: '65%', y: '40%', rotate: -8, scale: 1, isRight: false },
+    { x: '75%', y: '58%', rotate: 8, scale: 1, isRight: true },
+    { x: '85%', y: '42%', rotate: -8, scale: 1.05, isRight: false },
+    { x: '95%', y: '60%', rotate: 8, scale: 1.05, isRight: true },
   ];
 
   return (
@@ -114,9 +137,9 @@ export const MissionToProgramsDivider: React.FC = () => {
               top: step.y,
               transform: `translate(-50%, -50%) rotate(${step.rotate}deg)`
             }}
-            className="text-blue-600/80 drop-shadow-[0_4px_10px_rgba(37,99,235,0.22)]"
+            className="text-blue-600/90 drop-shadow-[0_4px_10px_rgba(37,99,235,0.3)]"
           >
-            <Footprints className="w-6 h-6 sm:w-7 sm:h-7" />
+            <ToddlerFootprint isRightFoot={step.isRight} className="w-8 h-6 sm:w-9 sm:h-7 text-blue-600" />
           </motion.div>
         ))}
       </div>
