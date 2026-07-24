@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PARENT_REVIEWS } from '../data/preschoolData';
 import { ParentReview } from '../types';
-import { Star, Heart, MessageSquarePlus, Quote, CheckCircle2, X } from 'lucide-react';
+import { Star, Heart, MessageSquarePlus, CheckCircle2, X } from 'lucide-react';
 
 export const ParentReviews: React.FC = () => {
   const [reviewsList, setReviewsList] = useState<ParentReview[]>(PARENT_REVIEWS);
@@ -19,9 +19,9 @@ export const ParentReviews: React.FC = () => {
   const set1 = reviewsList.slice(0, Math.ceil(reviewsList.length / 2));
   const set2 = reviewsList.slice(Math.ceil(reviewsList.length / 2));
 
-  // Triple each set for seamless infinite loop
-  const marqueeSet1 = [...set1, ...set1, ...set1];
-  const marqueeSet2 = [...set2, ...set2, ...set2];
+  // Repeat each set 4 times for seamless infinite loop
+  const marqueeSet1 = [...set1, ...set1, ...set1, ...set1];
+  const marqueeSet2 = [...set2, ...set2, ...set2, ...set2];
 
   const handleAddReviewSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,13 +123,12 @@ export const ParentReviews: React.FC = () => {
                 className="w-80 sm:w-96 glass-card glass-card-hover p-6 rounded-[28px] border border-white/90 bg-white/80 shadow-[0_10px_30px_rgba(37,99,235,0.06)] shrink-0 whitespace-normal flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-300"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <div className="flex text-amber-400">
                       {[...Array(rev.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-amber-400" />
                       ))}
                     </div>
-                    <Quote className="w-6 h-6 text-blue-200" />
                   </div>
 
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal line-clamp-4 italic">
@@ -137,13 +136,7 @@ export const ParentReviews: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3">
-                  <img
-                    src={rev.avatar}
-                    alt={rev.name}
-                    className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
                   <div>
                     <h4 className="text-xs font-bold text-slate-900">{rev.name}</h4>
                     <p className="text-[10px] text-blue-600 font-semibold">
@@ -168,13 +161,12 @@ export const ParentReviews: React.FC = () => {
                 className="w-80 sm:w-96 glass-card glass-card-hover p-6 rounded-[28px] border border-white/90 bg-white/80 shadow-[0_10px_30px_rgba(37,99,235,0.06)] shrink-0 whitespace-normal flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-300"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <div className="flex text-amber-400">
                       {[...Array(rev.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-amber-400" />
                       ))}
                     </div>
-                    <Quote className="w-6 h-6 text-sky-200" />
                   </div>
 
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal line-clamp-4 italic">
@@ -182,13 +174,7 @@ export const ParentReviews: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3">
-                  <img
-                    src={rev.avatar}
-                    alt={rev.name}
-                    className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
                   <div>
                     <h4 className="text-xs font-bold text-slate-900">{rev.name}</h4>
                     <p className="text-[10px] text-blue-600 font-semibold">
