@@ -112,22 +112,13 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
                   </p>
                 </div>
 
-                {/* 8-State Button Triggers */}
-                <div className="pt-6 border-t border-slate-100 flex items-center justify-between gap-3 mt-4">
-                  <Button
-                    onClick={() => setSelectedProgram(prog)}
-                    variant="outline"
-                    size="sm"
-                    className="w-1/2 justify-center"
-                  >
-                    Details
-                  </Button>
-
+                {/* Action Trigger */}
+                <div className="pt-6 border-t border-slate-100 mt-4">
                   <Button
                     onClick={() => onEnrollProgram(prog.title)}
                     variant="primary"
                     size="sm"
-                    className="w-1/2 justify-center"
+                    className="w-full justify-center"
                   >
                     <span>Enroll</span>
                     <ChevronRight className="w-4 h-4" />
