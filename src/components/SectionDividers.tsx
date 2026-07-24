@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Star, Heart, Sun, Cloud, Smile, Palette, Compass, Flower2, Footprints } from 'lucide-react';
+import footImg from '../assets/foot.png';
 
 /**
  * Divider 1: Home -> About (HeroToMissionDivider)
@@ -137,9 +138,18 @@ export const MissionToProgramsDivider: React.FC = () => {
               top: step.y,
               transform: `translate(-50%, -50%) rotate(${step.rotate}deg)`
             }}
-            className="text-blue-600/90 drop-shadow-[0_4px_10px_rgba(37,99,235,0.3)]"
+            className="drop-shadow-[0_4px_10px_rgba(37,99,235,0.3)]"
           >
-            <ToddlerFootprint isRightFoot={step.isRight} className="w-8 h-6 sm:w-9 sm:h-7 text-blue-600" />
+            {footImg ? (
+              <img
+                src={footImg}
+                alt="Footprint"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain text-blue-600"
+                style={{ transform: step.isRight ? 'scaleY(-1)' : 'none' }}
+              />
+            ) : (
+              <ToddlerFootprint isRightFoot={step.isRight} className="w-8 h-6 sm:w-9 sm:h-7 text-blue-600" />
+            )}
           </motion.div>
         ))}
       </div>
