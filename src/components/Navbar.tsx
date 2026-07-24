@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Menu, X, ChevronRight } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -10,8 +10,10 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const prevScrollPos = useRef(0);
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
@@ -24,15 +26,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      const currentScrollPos = window.scrollY;
+      setScrolled(currentScrollPos > 30);
 
-      if (window.scrollY < 120) {
+      // Hide navbar when scrolling down past 80px, show when scrolling up or near top or when mobile menu is open
+      const isScrollingUp = prevScrollPos.current > currentScrollPos;
+      const isNearTop = currentScrollPos < 80;
+      setVisible(isScrollingUp || isNearTop || mobileMenuOpen);
+      prevScrollPos.current = currentScrollPos;
+
+      if (currentScrollPos < 120) {
         setActiveSection('home');
         return;
       }
 
       const isAtBottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+        window.innerHeight + currentScrollPos >= document.body.offsetHeight - 100;
       if (isAtBottom) {
         setActiveSection('contact');
         return;
@@ -47,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
         { id: 'contact', targetNav: 'contact' },
       ];
 
-      const scrollPos = window.scrollY + 180;
+      const scrollPos = currentScrollPos + 180;
       let currentActive = 'home';
 
       for (const item of sectionMapping) {
@@ -69,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [mobileMenuOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -90,7 +99,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-5 transition-all duration-500">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-5 transition-transform duration-300 ease-out ${
+        visible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <nav
         className={`mx-auto max-w-7xl transition-all duration-500 rounded-full ${
           scrolled
