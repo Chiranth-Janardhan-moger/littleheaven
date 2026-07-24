@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { MissionVision } from './components/MissionVision';
 import { ProgramsSection } from './components/ProgramsSection';
-import { TimelineSection } from './components/TimelineSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { BookGallery } from './components/BookGallery';
 import { ParentReviews } from './components/ParentReviews';
@@ -16,7 +15,6 @@ import {
   HeroToMissionDivider,
   MissionToProgramsDivider,
   ProgramsToTimelineDivider,
-  TimelineToWhyChooseUsDivider,
   WhyChooseUsToGalleryDivider,
   GalleryToReviewsDivider,
   ReviewsToContactDivider,
@@ -73,18 +71,10 @@ export default function App() {
         />
       </AnimatedSection>
 
-      {/* Decorative Divider: Nature & Flower Sprouts Curved Double Wave */}
+      {/* Decorative Divider into Why Choose Us */}
       <ProgramsToTimelineDivider />
 
-      {/* Daily Activities Timeline */}
-      <AnimatedSection>
-        <TimelineSection />
-      </AnimatedSection>
-
-      {/* Decorative Divider: Swirl Ribbon with Floating Shapes */}
-      <TimelineToWhyChooseUsDivider />
-
-      {/* Why Choose Us (Continuous Moving Line) */}
+      {/* Why Choose Us */}
       <AnimatedSection>
         <WhyChooseUs />
       </AnimatedSection>
