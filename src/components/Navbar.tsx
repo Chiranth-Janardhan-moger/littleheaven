@@ -130,8 +130,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
             </div>
           </a>
 
-          {/* Hallmark N5 Desktop Nav Links with Sliding Active Pill */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/70 p-1.5 rounded-full border border-slate-200/60 backdrop-blur-md shadow-inner relative">
+          {/* Clean Desktop Nav Links */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -140,25 +140,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   id={`nav-link-${link.id}`}
-                  className={`relative px-4 py-1.5 text-xs xl:text-sm font-extrabold rounded-full transition-all duration-250 z-10 cursor-pointer ${
+                  className={`text-xs xl:text-sm font-extrabold transition-colors duration-200 cursor-pointer ${
                     isActive
-                      ? 'text-white'
-                      : 'text-slate-600 hover:text-blue-600 hover:bg-white/60'
+                      ? 'text-blue-600'
+                      : 'text-slate-600 hover:text-blue-600'
                   }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNavTabPill"
-                      className="absolute inset-0 bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-[0_4px_14px_rgba(37,99,235,0.35)] -z-10 will-change-transform"
-                      transition={{
-                        type: 'spring',
-                        stiffness: 380,
-                        damping: 30,
-                        mass: 0.7
-                      }}
-                    />
-                  )}
-                  <span className="relative z-10">{link.name}</span>
+                  {link.name}
                 </a>
               );
             })}
