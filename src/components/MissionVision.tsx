@@ -66,13 +66,6 @@ export const MissionVision: React.FC = () => {
       <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-200/35 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
 
       {/* Floating Badges */}
-      <div className="hidden lg:block absolute top-12 left-12 animate-float-slow pointer-events-none z-10">
-        <Badge variant="primary" className="bg-white/85 backdrop-blur-md shadow-md py-2 px-4">
-          <Sparkles className="w-4 h-4 text-blue-500 fill-blue-400/30" />
-          <span>Child-Centric Growth</span>
-        </Badge>
-      </div>
-
       <div className="hidden lg:block absolute top-24 right-12 animate-float-reverse pointer-events-none z-10">
         <Badge variant="sky" className="bg-white/85 backdrop-blur-md shadow-md py-2 px-4">
           <Award className="w-4 h-4 text-sky-500" />
