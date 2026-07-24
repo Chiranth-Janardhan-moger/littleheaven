@@ -89,7 +89,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
               
               {/* Item 1: Address */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-blue-100/80 text-blue-600 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
 
               {/* Item 2: Phone */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-sky-100/80 text-sky-600 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
 
               {/* Item 3: Email */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-cyan-100/80 text-cyan-600 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -135,7 +135,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
 
               {/* Item 4: Business Hours */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-indigo-100/80 text-indigo-600 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
