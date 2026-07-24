@@ -16,6 +16,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
   });
 
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
