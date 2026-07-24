@@ -161,18 +161,6 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
                 </a>
 
               </div>
-
-              {/* Get Directions Button Below Map */}
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Little%27s+Heaven+Child+Care+%26+Early+Learning+Federal+Bank+Dasarahalli+Main+Rd+Bhuvaneswari+Nagar+Hebbal+Bengaluru+Karnataka+560024"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl text-xs font-bold text-blue-700 bg-white border border-blue-200/80 shadow-xs hover:bg-blue-50/80 hover:border-blue-300 transition-all flex items-center justify-center gap-2 group cursor-pointer"
-              >
-                <MapPin className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform" />
-                <span>Get Directions on Google Maps</span>
-                <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
-              </a>
             </div>
 
           </div>
