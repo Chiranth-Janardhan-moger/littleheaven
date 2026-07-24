@@ -15,6 +15,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
   const [activeSection, setActiveSection] = useState('home');
   const prevScrollPos = useRef(0);
 
+  const activeSectionRef = useRef('home');
+
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About', href: '#about', id: 'about' },
@@ -35,18 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
       setVisible(isScrollingUp || isNearTop || mobileMenuOpen);
       prevScrollPos.current = currentScrollPos;
 
-      if (currentScrollPos < 120) {
-        setActiveSection('home');
-        return;
-      }
-
-      const isAtBottom =
-        window.innerHeight + currentScrollPos >= document.body.offsetHeight - 100;
-      if (isAtBottom) {
-        setActiveSection('contact');
-        return;
-      }
-
       const sectionMapping: { id: string; targetNav: string }[] = [
         { id: 'home', targetNav: 'home' },
         { id: 'about', targetNav: 'about' },
@@ -56,20 +46,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
         { id: 'contact', targetNav: 'contact' },
       ];
 
-      const scrollPos = currentScrollPos + 180;
       let currentActive = 'home';
+      const isAtBottom =
+        window.innerHeight + currentScrollPos >= document.body.offsetHeight - 80;
 
-      for (const item of sectionMapping) {
-        const el = document.getElementById(item.id);
-        if (el) {
-          const top = el.getBoundingClientRect().top + window.pageYOffset;
-          if (scrollPos >= top) {
-            currentActive = item.targetNav;
+      if (isAtBottom) {
+        currentActive = 'contact';
+      } else if (currentScrollPos >= 100) {
+        const scrollPos = currentScrollPos + 220;
+        for (const item of sectionMapping) {
+          const el = document.getElementById(item.id);
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.pageYOffset;
+            if (scrollPos >= top) {
+              currentActive = item.targetNav;
+            }
           }
         }
       }
 
-      setActiveSection(currentActive);
+      if (currentActive !== activeSectionRef.current) {
+        activeSectionRef.current = currentActive;
+        setActiveSection(currentActive);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -151,11 +150,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavTabPill"
-                      className="absolute inset-0 bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-md shadow-blue-500/30 -z-10"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-md shadow-blue-500/30 -z-10 will-change-transform"
                       transition={{
                         type: 'spring',
-                        stiffness: 400,
-                        damping: 32,
+                        stiffness: 300,
+                        damping: 30,
+                        mass: 0.8
                       }}
                     />
                   )}
