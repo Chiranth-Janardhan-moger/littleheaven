@@ -132,8 +132,13 @@ export const ProgramsToTimelineDivider: React.FC = () => {
   return (
     <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-blue-50/20">
       
-      {/* Outer Blue Glow Layer */}
-      <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-r from-blue-600/25 via-sky-400/35 to-cyan-500/25 blur-xl" />
+      {/* Floating Badge */}
+      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+        <div className="px-5 py-2 rounded-full bg-white border border-slate-100 shadow-md shadow-blue-500/10 text-xs font-extrabold text-blue-700 flex items-center gap-2 select-none">
+          <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+          <span>Playful Learning Journey</span>
+        </div>
+      </div>
 
 
 
