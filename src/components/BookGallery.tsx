@@ -104,7 +104,7 @@ export const BookGallery: React.FC = () => {
       setSpreadIndex(nextSpread);
       setAnimating(null);
       setTargetSpread(null);
-    }, 900);
+    }, 750);
   };
 
   const handlePrev = () => {
@@ -118,7 +118,7 @@ export const BookGallery: React.FC = () => {
       setSpreadIndex(prevSpread);
       setAnimating(null);
       setTargetSpread(null);
-    }, 900);
+    }, 750);
   };
 
   // Static underlying page items
