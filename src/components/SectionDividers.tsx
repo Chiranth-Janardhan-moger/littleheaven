@@ -396,61 +396,37 @@ export const ReviewsToContactDivider: React.FC = () => {
 
 /**
  * Divider 8: Contact -> Footer (ContactToFooterDivider)
- * Concept: Elegant layered ocean wave into dark navy footer. Multiple wave layers, soft blue glow, floating bubbles, tiny twinkling stars.
+ * Concept: Ultra-clean smooth wave transition into dark navy footer (#0A1128).
  */
 export const ContactToFooterDivider: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-gradient-to-b from-blue-50/40 to-[#0A1128]">
+    <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-[#F8FCFF]">
       
-      {/* Outer Blue Glow */}
-      <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-r from-blue-600/30 via-sky-400/40 to-cyan-500/30 blur-2xl" />
-
-      {/* Floating Constellation Stars and Glowing Bubbles */}
-      <div className="absolute inset-x-0 top-4 flex justify-around px-8 z-20 opacity-90 pointer-events-none">
-        <Star className="w-4 h-4 text-amber-300 animate-pulse drop-shadow-[0_0_8px_rgba(252,211,77,0.9)]" />
-        <Sparkles className="w-5 h-5 text-cyan-300 animate-float-slow drop-shadow-[0_0_10px_rgba(6,182,212,0.9)]" />
-        <div className="w-4 h-4 rounded-full bg-cyan-300/80 shadow-[0_0_10px_rgba(6,182,212,0.9)] animate-ping" />
-        <Star className="w-4 h-4 text-sky-200 animate-pulse hidden sm:block drop-shadow-[0_0_8px_rgba(186,230,253,0.9)]" />
-        <Sparkles className="w-5 h-5 text-sky-400 animate-float-reverse drop-shadow-[0_0_10px_rgba(56,189,248,0.9)]" />
-      </div>
-
-      {/* Layered Waves Transitioning to Dark Navy #0A1128 */}
+      {/* Layered Wave Transition into Dark Navy #0A1128 */}
       <svg
-        className="relative block w-full h-20 sm:h-28 lg:h-36 text-[#0A1128]"
-        viewBox="0 0 1440 140"
+        className="relative block w-full h-16 sm:h-24 lg:h-32 text-[#0A1128]"
+        viewBox="0 0 1440 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id="footerWave1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-            <stop offset="50%" stopColor="#2563eb" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
-          </linearGradient>
-
-          <linearGradient id="footerWave2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#2563eb" stopOpacity="0.7" />
-            <stop offset="50%" stopColor="#0284c7" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#0d9488" stopOpacity="0.7" />
+          <linearGradient id="footerWaveSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#2563eb" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#0284c7" stopOpacity="0.2" />
           </linearGradient>
         </defs>
 
-        {/* Top Wave Layer */}
+        {/* Soft Background Wave Layer */}
         <path
-          d="M0,30 C320,110 640,-10 960,80 C1280,140 1380,30 1440,60 L1440,140 L0,140 Z"
-          fill="url(#footerWave1)"
-        />
-
-        {/* Middle Wave Layer */}
-        <path
-          d="M0,55 C280,15 600,115 920,35 C1200,105 1360,15 1440,75 L1440,140 L0,140 Z"
-          fill="url(#footerWave2)"
+          d="M0,40 C320,100 640,0 960,70 C1280,120 1380,20 1440,50 L1440,120 L0,120 Z"
+          fill="url(#footerWaveSoft)"
         />
 
         {/* Deep Navy Foreground Footer Wave */}
         <path
-          d="M0,75 C360,135 720,15 1080,95 C1260,135 1380,55 1440,85 L1440,140 L0,140 Z"
+          d="M0,65 C360,125 720,25 1080,85 C1260,115 1380,45 1440,65 L1440,120 L0,120 Z"
           fill="currentColor"
         />
       </svg>
