@@ -1,6 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Globe, ShieldCheck } from 'lucide-react';
-import { Badge } from './ui/Badge';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,12 +16,6 @@ export const Footer: React.FC = () => {
               Inspiring young minds to learn, grow, and shine every day in a safe, clean, and nurturing early education sanctuary.
             </p>
           </div>
-          
-          <Badge variant="success" className="bg-emerald-950/80 text-emerald-400 border-emerald-800/80 py-2 px-4 text-xs font-bold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-1" />
-            <ShieldCheck className="w-4 h-4 mr-1 text-emerald-400" />
-            <span>Admissions & Campus Tours Open</span>
-          </Badge>
         </div>
 
         {/* 3-Column Info Grid */}
