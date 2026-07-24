@@ -111,7 +111,7 @@ export const MissionVision: React.FC = () => {
               }}
               className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full p-1 bg-gradient-to-tr from-blue-500 via-sky-400 to-cyan-300 shadow-[0_20px_60px_rgba(37,99,235,0.18)] hover:shadow-[0_25px_70px_rgba(37,99,235,0.28)] transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-full h-full rounded-full bg-white/95 backdrop-blur-2xl border border-white/90 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden">
+              <div className="w-full h-full rounded-full bg-white border border-slate-100 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-inner">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 p-0.5 shadow-md shadow-blue-500/30 mb-3 group-hover:scale-110 transition-transform">
                   <div className="w-full h-full bg-white/90 rounded-full flex items-center justify-center">
                     <Compass className="w-8 h-8 text-blue-600" />
@@ -144,7 +144,7 @@ export const MissionVision: React.FC = () => {
               }}
               className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full p-1 bg-gradient-to-tr from-sky-400 via-blue-600 to-indigo-500 shadow-[0_20px_60px_rgba(37,99,235,0.18)] hover:shadow-[0_25px_70px_rgba(37,99,235,0.28)] transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-full h-full rounded-full bg-white/95 backdrop-blur-2xl border border-white/90 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden">
+              <div className="w-full h-full rounded-full bg-white border border-slate-100 p-8 sm:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-inner">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 p-0.5 shadow-md shadow-blue-500/30 mb-3 group-hover:scale-110 transition-transform">
                   <div className="w-full h-full bg-white/90 rounded-full flex items-center justify-center">
                     <Eye className="w-8 h-8 text-sky-600" />
