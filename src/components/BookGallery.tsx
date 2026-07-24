@@ -3,7 +3,6 @@ import { GALLERY_BOOK_PAGES } from '../data/preschoolData';
 import {
   ChevronLeft,
   ChevronRight,
-  Maximize2,
   X,
   BookOpen,
   Sparkles
@@ -38,18 +37,6 @@ const SinglePageCard: React.FC<{
           <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/95 text-blue-700 text-xs font-bold shadow-xs">
             {page.category}
           </div>
-
-          {/* Expand Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onExpand(page);
-            }}
-            className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-slate-800 shadow-xs hover:scale-110 transition-all cursor-pointer z-10"
-            title="Expand Image"
-          >
-            <Maximize2 className="w-4 h-4" />
-          </button>
         </div>
 
         {/* Photo Info */}
