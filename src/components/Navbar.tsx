@@ -126,9 +126,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
               <span className="text-base sm:text-lg font-extrabold font-sans tracking-tight text-slate-900 block leading-none">
                 Little's Heaven
               </span>
-              <span className="text-[9px] sm:text-[10px] font-extrabold tracking-widest uppercase text-blue-600 block mt-0.5">
-                Child Care & Early Learning
-              </span>
             </div>
           </a>
 
