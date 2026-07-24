@@ -132,6 +132,11 @@
   50% { opacity: 0.7; transform: scale(1.05); }
 }
 
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333333%); }
+}
+
 .animate-float-slow {
   animation: floatSlow 6s ease-in-out infinite;
 }
@@ -142,4 +147,13 @@
 
 .animate-pulse-glow {
   animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
 }
