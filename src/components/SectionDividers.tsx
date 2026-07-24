@@ -11,17 +11,6 @@ export const HeroToMissionDivider: React.FC = () => {
       {/* Soft Blue & Cyan Glow Backdrop Aura */}
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-r from-blue-600/30 via-sky-400/35 to-cyan-500/30 blur-2xl opacity-80" />
 
-      {/* Animated Floating Bubbles and Sparkles */}
-      <div className="absolute inset-0 flex justify-around items-center px-6 sm:px-24 z-20 opacity-90">
-        <div className="w-5 h-5 rounded-full bg-cyan-400/60 shadow-[0_0_12px_rgba(6,182,212,0.9)] animate-float-slow" />
-        <Sparkles className="w-5 h-5 text-cyan-400 animate-float-slow drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]" />
-        <div className="w-3.5 h-3.5 rounded-full bg-sky-300 animate-ping opacity-80 shadow-[0_0_10px_rgba(56,189,248,0.9)]" />
-        <Star className="w-4 h-4 text-sky-400 animate-float-reverse hidden sm:block drop-shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
-        <div className="w-6 h-6 rounded-full bg-blue-400/40 border border-cyan-300/60 shadow-[0_0_12px_rgba(37,99,235,0.7)] animate-float-slow" />
-        <Sparkles className="w-6 h-6 text-sky-400 animate-float-slow hidden md:block drop-shadow-[0_0_10px_rgba(56,189,248,0.9)]" />
-        <div className="w-4 h-4 rounded-full bg-cyan-300 animate-float-reverse shadow-[0_0_10px_rgba(6,182,212,0.9)]" />
-      </div>
-
       {/* Layered Ocean Wave SVG */}
       <svg
         className="relative block w-full h-20 sm:h-28 lg:h-36 drop-shadow-[0_6px_16px_rgba(37,99,235,0.25)]"
