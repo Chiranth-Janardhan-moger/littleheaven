@@ -382,12 +382,12 @@ export const ReviewsToContactDivider: React.FC = () => {
         />
       </svg>
 
-      {/* Center Floating Invitation Pill */}
+      {/* Big Bold Headline Badge */}
       <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-        <div className="px-5 py-2.5 rounded-full bg-white/95 border border-blue-300 shadow-xl shadow-sky-400/30 text-xs font-extrabold text-blue-900 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-cyan-500 animate-pulse drop-shadow-[0_0_6px_rgba(6,182,212,0.8)]" />
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2.5 px-6 py-3 rounded-full bg-white border border-slate-100 shadow-lg shadow-blue-500/10">
+          <Sparkles className="w-6 h-6 text-blue-600" />
           <span>Get in Touch With Us</span>
-        </div>
+        </h2>
       </div>
 
     </div>
