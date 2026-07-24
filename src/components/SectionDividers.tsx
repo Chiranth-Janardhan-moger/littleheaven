@@ -77,16 +77,16 @@ export const HeroToMissionDivider: React.FC = () => {
  */
 export const MissionToProgramsDivider: React.FC = () => {
   const steps = [
-    { x: '5%', y: '45%', rotate: -18, scale: 0.85 },
-    { x: '15%', y: '65%', rotate: 18, scale: 0.85 },
-    { x: '25%', y: '35%', rotate: -15, scale: 0.9 },
-    { x: '35%', y: '60%', rotate: 20, scale: 0.9 },
-    { x: '45%', y: '40%', rotate: -16, scale: 0.95 },
-    { x: '55%', y: '65%', rotate: 16, scale: 0.95 },
-    { x: '65%', y: '35%', rotate: -14, scale: 1 },
-    { x: '75%', y: '60%', rotate: 18, scale: 1 },
-    { x: '85%', y: '40%', rotate: -15, scale: 1.05 },
-    { x: '95%', y: '65%', rotate: 15, scale: 1.05 },
+    { x: '5%', y: '45%', rotate: 75, scale: 0.85 },
+    { x: '15%', y: '60%', rotate: 105, scale: 0.85 },
+    { x: '25%', y: '40%', rotate: 78, scale: 0.9 },
+    { x: '35%', y: '58%', rotate: 102, scale: 0.9 },
+    { x: '45%', y: '42%', rotate: 76, scale: 0.95 },
+    { x: '55%', y: '60%', rotate: 104, scale: 0.95 },
+    { x: '65%', y: '40%', rotate: 78, scale: 1 },
+    { x: '75%', y: '58%', rotate: 102, scale: 1 },
+    { x: '85%', y: '42%', rotate: 75, scale: 1.05 },
+    { x: '95%', y: '60%', rotate: 105, scale: 1.05 },
   ];
 
   return (
