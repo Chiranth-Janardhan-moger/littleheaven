@@ -108,6 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                   <img
                     src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
                     alt="Toddler learning with blocks"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -121,6 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                   <img
                     src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop"
                     alt="Toddler girl playing"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -140,6 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                   <img
                     src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
                     alt="Smiling preschool student"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -153,6 +156,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                   <img
                     src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=800&auto=format&fit=crop"
                     alt="Boy playing with toys"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />

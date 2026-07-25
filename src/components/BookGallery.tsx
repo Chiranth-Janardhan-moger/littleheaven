@@ -17,7 +17,8 @@ const SinglePageCard: React.FC<{
 }> = ({ page, side, onExpand }) => {
   return (
     <div
-      className={`bg-gradient-to-tr from-amber-50/20 via-white to-blue-50/20 rounded-[28px] p-4 sm:p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between relative h-full group hover:border-blue-300 transition-colors ${
+      onClick={() => onExpand(page)}
+      className={`bg-gradient-to-tr from-amber-50/20 via-white to-blue-50/20 rounded-[28px] p-4 sm:p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between relative h-full group hover:border-blue-300 transition-colors cursor-pointer ${
         side === 'left'
           ? 'shadow-[inset_-12px_0_20px_-10px_rgba(0,0,0,0.05)]'
           : 'shadow-[inset_12px_0_20px_-10px_rgba(0,0,0,0.05)]'
@@ -29,6 +30,7 @@ const SinglePageCard: React.FC<{
           <img
             src={page.image}
             alt={page.title}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
             referrerPolicy="no-referrer"
           />
@@ -67,6 +69,188 @@ const SinglePageCard: React.FC<{
             <span>MEMORIES 2026</span>
           </>
         )}
+      </div>
+    </div>
+  );
+};
+
+/* Interactive Stacked Album Deck for Mobile View */
+const MobileAlbumStack: React.FC<{
+  items: GalleryItem[];
+  onExpand: (item: GalleryItem) => void;
+}> = ({ items, onExpand }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [swipingDirection, setSwipingDirection] = useState<'left' | 'right' | null>(null);
+
+  const minSwipeDistance = 40;
+
+  const handleNext = () => {
+    if (swipingDirection !== null) return;
+    setSwipingDirection('left');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % items.length);
+      setSwipingDirection(null);
+      setDragOffset(0);
+    }, 220);
+  };
+
+  const handlePrev = () => {
+    if (swipingDirection !== null) return;
+    setSwipingDirection('right');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+      setSwipingDirection(null);
+      setDragOffset(0);
+    }, 220);
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+    if (touchStart !== null) {
+      const currentTouch = e.targetTouches[0].clientX;
+      setDragOffset(currentTouch - touchStart);
+    }
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setDragOffset(0);
+      return;
+    }
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    } else {
+      setDragOffset(0);
+    }
+  };
+
+  return (
+    <div className="relative w-full max-w-md mx-auto py-2 px-1 sm:px-2 select-none">
+      {/* Album Stack Container */}
+      <div
+        className="relative h-[490px] w-full flex items-center justify-center touch-pan-y"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {items.map((item, idx) => {
+          let position = (idx - currentIndex + items.length) % items.length;
+
+          // Only render top 3 visible stacked cards
+          if (position > 2 && position < items.length - 1) return null;
+
+          const isTop = position === 0;
+          const isSecond = position === 1;
+          const isThird = position === 2;
+
+          let transformStyle = '';
+          let zIndex = 10;
+          let opacity = 1;
+
+          if (isTop) {
+            zIndex = 30;
+            const rot = dragOffset * 0.04;
+            const transX = dragOffset;
+            if (swipingDirection === 'left') {
+              transformStyle = 'translateX(-120%) rotate(-12deg)';
+              opacity = 0;
+            } else if (swipingDirection === 'right') {
+              transformStyle = 'translateX(120%) rotate(12deg)';
+              opacity = 0;
+            } else {
+              transformStyle = `translateX(${transX}px) rotate(${rot}deg)`;
+            }
+          } else if (isSecond) {
+            zIndex = 20;
+            transformStyle = 'translateY(16px) scale(0.94) rotate(2deg)';
+            opacity = 0.92;
+          } else if (isThird) {
+            zIndex = 10;
+            transformStyle = 'translateY(32px) scale(0.88) rotate(-2deg)';
+            opacity = 0.75;
+          } else {
+            zIndex = 5;
+            transformStyle = 'translateY(44px) scale(0.82)';
+            opacity = 0;
+          }
+
+          return (
+            <div
+              key={item.id}
+              className="absolute inset-0 transition-all duration-300 ease-out flex flex-col"
+              style={{
+                zIndex,
+                transform: transformStyle,
+                opacity,
+              }}
+            >
+              <div className="bg-white rounded-[32px] p-5 border-2 border-slate-100 shadow-[0_20px_45px_rgba(37,99,235,0.14)] h-full flex flex-col justify-between relative overflow-hidden">
+                <div>
+                  <div className="relative aspect-[16/11] rounded-[22px] overflow-hidden bg-slate-100 mb-4 shadow-inner">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover pointer-events-none"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-white text-blue-700 text-xs font-bold shadow-xs">
+                      {item.category}
+                    </div>
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/60 backdrop-blur-md text-white text-[10px] font-bold">
+                      {idx + 1} / {items.length}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5 px-1">
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-blue-600 uppercase tracking-wider">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>{item.ageTag}</span>
+                    </div>
+                    <h3 className="text-xl font-extrabold text-slate-900 leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs font-medium line-clamp-2">
+                      {item.caption}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-3 mt-2 border-t border-slate-100 flex items-center justify-center text-[11px] text-slate-400 font-bold px-1">
+                  <span>SWIPE CARD ↔</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Swipe Indicators */}
+      <div className="mt-6 flex items-center justify-center gap-1.5 px-2">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              i === currentIndex ? 'w-6 bg-blue-600' : 'w-2 bg-slate-200'
+            }`}
+            aria-label={`Card ${i + 1}`}
+          />
+        ))}
       </div>
     </div>
   );
@@ -143,8 +327,16 @@ export const BookGallery: React.FC = () => {
           </p>
         </div>
 
-        {/* PHYSICAL 3D OPEN PHOTO ALBUM STAGE */}
-        <div className="relative max-w-5xl mx-auto perspective-2000">
+        {/* MOBILE VIEW: SWIPEABLE ALBUM STACK DECK */}
+        <div className="block md:hidden">
+          <MobileAlbumStack
+            items={GALLERY_BOOK_PAGES}
+            onExpand={(item) => setLightboxItem(item)}
+          />
+        </div>
+
+        {/* DESKTOP VIEW: PHYSICAL 3D OPEN PHOTO ALBUM STAGE */}
+        <div className="hidden md:block relative max-w-5xl mx-auto perspective-2000">
           
           {/* Glassmorphism Hardcover Album Frame with Physical Page Stack Edges */}
           <div className="relative bg-white/85 backdrop-blur-2xl border-2 border-white/95 rounded-[36px] sm:rounded-[44px] p-4 sm:p-6 lg:p-8 shadow-[0_25px_60px_rgba(37,99,235,0.16)] before:absolute before:-bottom-3 before:left-6 before:right-6 before:h-3 before:bg-slate-200/90 before:rounded-b-[24px] before:border-b before:border-slate-300/80 after:absolute after:-bottom-5 after:left-10 after:right-10 after:h-2.5 after:bg-slate-300/70 after:rounded-b-[18px]">
@@ -298,6 +490,7 @@ export const BookGallery: React.FC = () => {
                 <img
                   src={lightboxItem.image}
                   alt={lightboxItem.title}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -321,4 +514,3 @@ export const BookGallery: React.FC = () => {
     </section>
   );
 };
-

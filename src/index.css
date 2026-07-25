@@ -178,7 +178,7 @@
 }
 
 .animate-marquee-left {
-  animation: marqueeLeft 35s linear infinite;
+  animation: marqueeLeft 20s linear infinite;
   will-change: transform;
 }
 
@@ -187,7 +187,7 @@
 }
 
 .animate-marquee-right {
-  animation: marqueeRight 35s linear infinite;
+  animation: marqueeRight 20s linear infinite;
   will-change: transform;
 }
 

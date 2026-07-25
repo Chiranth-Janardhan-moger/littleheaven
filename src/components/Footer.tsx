@@ -13,6 +13,7 @@ export const Footer: React.FC = () => {
             <img
               src={logoImg}
               alt="Little's Heaven Logo"
+              loading="lazy"
               className="h-12 sm:h-14 w-auto object-contain bg-white/10 p-1.5 rounded-2xl backdrop-blur-md border border-white/10"
             />
             <div>

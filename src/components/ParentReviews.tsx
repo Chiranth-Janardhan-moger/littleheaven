@@ -94,15 +94,6 @@ export const ParentReviews: React.FC = () => {
                 Based on <strong>11 Google Reviews</strong>
               </span>
             </div>
-
-            <button
-              onClick={() => setAddModalOpen(true)}
-              id="add-review-trigger-btn"
-              className="px-5 py-3 rounded-2xl text-xs font-bold text-blue-700 bg-white/90 border border-blue-200/80 shadow-md backdrop-blur-xl hover:bg-white hover:scale-105 transition-all flex items-center gap-2 cursor-pointer"
-            >
-              <MessageSquarePlus className="w-4 h-4 text-blue-600" />
-              <span>Share Your Story</span>
-            </button>
           </div>
         </div>
 
@@ -113,8 +104,8 @@ export const ParentReviews: React.FC = () => {
         
         {/* SET 1: Moving LEFT -> RIGHT (Right Marquee) */}
         <div className="relative w-full overflow-hidden py-3">
-          <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute top-0 bottom-0 left-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute top-0 bottom-0 right-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           <div className="flex items-center gap-6 animate-marquee-right whitespace-nowrap py-2 md:hover:[animation-play-state:paused]">
             {marqueeSet1.map((rev, index) => (
@@ -151,8 +142,8 @@ export const ParentReviews: React.FC = () => {
 
         {/* SET 2: Moving RIGHT -> LEFT (Left Marquee) */}
         <div className="relative w-full overflow-hidden py-3">
-          <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute top-0 bottom-0 left-0 w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="hidden sm:block absolute top-0 bottom-0 right-0 w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           <div className="flex items-center gap-6 animate-marquee-left whitespace-nowrap py-2 md:hover:[animation-play-state:paused]">
             {marqueeSet2.map((rev, index) => (

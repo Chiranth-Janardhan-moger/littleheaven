@@ -81,6 +81,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
                     <img
                       src={prog.image}
                       alt={prog.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                       referrerPolicy="no-referrer"
                     />

@@ -72,29 +72,6 @@ export const HeroToMissionDivider: React.FC = () => {
   );
 };
 
-/* Custom Solid Filled Toddler Footprint Component (Heel on left, Toes on right) */
-const ToddlerFootprint: React.FC<{ isRightFoot?: boolean; className?: string }> = ({ isRightFoot = false, className = 'w-7 h-7' }) => {
-  return (
-    <svg
-      viewBox="0 0 36 24"
-      fill="currentColor"
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Solid main foot sole pad (Heel at left x~5, Ball of foot at right x~22) */}
-      <path
-        d="M5 12 C5 7.5 8 6 13 7 C17 7.8 19 6 22 7.5 C25 9 25 15 22 16.5 C19 18 17 16.2 13 17 C8 18 5 16.5 5 12 Z"
-      />
-      {/* 5 Solid Filled Toes on Right Side (x: 28..31.5) */}
-      <circle cx="28.5" cy={isRightFoot ? "5" : "19"} r="3" />
-      <circle cx="31" cy={isRightFoot ? "9.5" : "14.5"} r="2.3" />
-      <circle cx="31.5" cy={isRightFoot ? "13.5" : "10.5"} r="2" />
-      <circle cx="30.5" cy={isRightFoot ? "17" : "7"} r="1.7" />
-      <circle cx="28.5" cy={isRightFoot ? "20" : "4"} r="1.4" />
-    </svg>
-  );
-};
-
 /**
  * Divider 2: About -> Programs (MissionToProgramsDivider)
  * Concept: Elegant flowing ribbon wave with animated dotted path and toddler footsteps trail leading into Programs.
@@ -185,22 +162,20 @@ export const MissionToProgramsDivider: React.FC = () => {
             }}
             className="drop-shadow-[0_4px_10px_rgba(37,99,235,0.3)]"
           >
-            {footImg ? (
-              <img
-                src={footImg}
-                alt="Footprint"
-                className="w-8 h-8 sm:w-10 sm:h-10 object-contain text-blue-600"
-                style={{ transform: 'rotate(90deg)' }}
-              />
-            ) : (
-              <ToddlerFootprint isRightFoot={false} className="w-8 h-6 sm:w-9 sm:h-7 text-blue-600" />
-            )}
+            <img
+              src={footImg}
+              alt="Footprint"
+              loading="lazy"
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain text-blue-600"
+              style={{ transform: 'rotate(90deg)' }}
+            />
           </motion.div>
         ))}
       </div>
     </div>
   );
 };
+
 
 /**
  * Divider 3: Programs -> Daily Routine (ProgramsToTimelineDivider)
@@ -243,19 +218,19 @@ export const ProgramsToTimelineDivider: React.FC = () => {
 
         {/* Back Ribbon Layer */}
         <path
-          d="M0 30 C 360 110, 720 -10, 1080 90, 1440 20 L 1440 90 C 1080 160, 720 60, 360 140, 0 80 Z"
+          d="M0 30 C 360 110 720 -10 1080 90 C 1200 120 1360 40 1440 20 L 1440 90 C 1200 140 960 70 720 120 C 480 160 240 80 0 80 Z"
           fill="url(#ribbonMainGrad)"
         />
 
         {/* Ribbon Fold Shimmer */}
         <path
-          d="M0 45 C 300 115, 650 10, 1000 95, 1440 35 L 1440 65 C 1000 125, 650 35, 300 130, 0 70 Z"
+          d="M0 45 C 300 115 650 10 1000 95 C 1200 120 1360 50 1440 35 L 1440 65 C 1200 110 900 130 650 120 C 400 110 200 80 0 70 Z"
           fill="url(#ribbonShimmerGrad)"
         />
 
         {/* Dotted Ribbon Highlight Line */}
         <path
-          d="M0 35 C 360 115, 720 -5, 1080 95, 1440 25"
+          d="M0 35 C 360 115 720 -5 1080 95 C 1260 115 1380 35 1440 25"
           stroke="#ffffff"
           strokeWidth="3"
           strokeDasharray="6 6"
@@ -356,19 +331,19 @@ export const WhyChooseUsToGalleryDivider: React.FC = () => {
 
         {/* Abstract Smooth Fluid Splash Path */}
         <path
-          d="M0,40 C 220,130 380,-20 580,90 C 780,160 950,10 1140,90 C 1280,140 1380,30 1440,60 L 1440,150 L 0,150 Z"
+          d="M0 40 C 220 130 380 -20 580 90 C 780 160 950 10 1140 90 C 1280 140 1380 30 1440 60 L 1440 150 L 0 150 Z"
           fill="url(#splashGrad)"
         />
 
         {/* Dotted Texture Overlay on Splash */}
         <path
-          d="M0,40 C 220,130 380,-20 580,90 C 780,160 950,10 1140,90 C 1280,140 1380,30 1440,60 L 1440,150 L 0,150 Z"
+          d="M0 40 C 220 130 380 -20 580 90 C 780 160 950 10 1140 90 C 1280 140 1380 30 1440 60 L 1440 150 L 0 150 Z"
           fill="url(#splashDots)"
         />
 
         {/* Foreground White Wave Transition */}
         <path
-          d="M0,80 C 260,140 520,30 780,110 C 1040,160 1280,60 1440,90 L 1440,150 L 0,150 Z"
+          d="M0 80 C 260 140 520 30 780 110 C 1040 160 1280 60 1440 90 L 1440 150 L 0 150 Z"
           fill="#FFFFFF"
         />
       </svg>

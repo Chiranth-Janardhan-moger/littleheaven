@@ -75,8 +75,8 @@ export const WhyChooseUs: React.FC = () => {
       <div className="relative w-full overflow-hidden py-6">
         
         {/* Gradient Fades on Left & Right Edges */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute top-0 bottom-0 left-0 w-40 bg-gradient-to-r from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute top-0 bottom-0 right-0 w-40 bg-gradient-to-l from-[#F8FCFF] via-[#F8FCFF]/80 to-transparent z-10 pointer-events-none" />
 
         {/* Animated Marquee Track */}
         <div className="flex items-center gap-6 animate-marquee-left whitespace-nowrap py-3 w-max select-none">
@@ -98,7 +98,7 @@ export const WhyChooseUs: React.FC = () => {
                   <div className="text-[10px] font-extrabold text-blue-600 uppercase tracking-widest">
                     {feat.badge}
                   </div>
-                  <div className="text-sm font-extrabold text-slate-900">
+                  <div className="text-sm font-normal text-slate-700">
                     {feat.title}
                   </div>
                 </div>

@@ -53,6 +53,7 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({ program, onClose, on
             <img
               src={program.image}
               alt={program.title}
+              loading="lazy"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
