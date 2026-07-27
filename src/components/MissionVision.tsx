@@ -33,8 +33,11 @@ export const MissionVision: React.FC = () => {
               <div className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg border border-slate-100/80">
                 <img
                   src="/founder.png"
-                  alt="Founder & Director"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Founder & Director - Little's Heaven Early Childhood Sanctuary"
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none select-none"
                 />
               </div>
             </div>

@@ -109,7 +109,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                     src="/baby1.avif"
                     alt="Little's Heaven Happy Toddler"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    decoding="async"
+                    draggable={false}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
@@ -119,7 +121,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                     src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop"
                     alt="Toddler girl playing"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    decoding="async"
+                    draggable={false}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
@@ -136,7 +140,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                     src="/baby2.avif"
                     alt="Little's Heaven Preschooler"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    decoding="async"
+                    draggable={false}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
@@ -146,7 +152,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
                     src="/baby4.avif"
                     alt="Little's Heaven Early Learner"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    decoding="async"
+                    draggable={false}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>

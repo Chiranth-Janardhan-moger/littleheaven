@@ -12,9 +12,11 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-3.5">
             <img
               src={logoImg}
-              alt="Little's Heaven Logo"
+              alt="Little's Heaven Preschool & Day Care Logo"
               loading="lazy"
-              className="h-10 sm:h-11 w-auto object-contain bg-white/10 p-1.5 rounded-xl backdrop-blur-md border border-white/10"
+              decoding="async"
+              draggable={false}
+              className="h-10 sm:h-11 w-auto object-contain bg-white/10 p-1.5 rounded-xl backdrop-blur-md border border-white/10 pointer-events-none select-none"
             />
             <div>
               <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">

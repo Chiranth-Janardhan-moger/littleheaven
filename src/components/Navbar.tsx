@@ -115,9 +115,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
           >
             <img
               src={logoImg}
-              alt="Little's Heaven Logo"
+              alt="Little's Heaven Preschool & Day Care Logo"
               loading="lazy"
-              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
+              decoding="async"
+              draggable={false}
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs pointer-events-none select-none"
             />
             <div>
               <span className="text-base sm:text-lg font-extrabold font-sans tracking-tight text-slate-900 block leading-none">

@@ -53,7 +53,9 @@ export const InstagramReels: React.FC = () => {
                     src={reel.image}
                     alt={reel.caption}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    decoding="async"
+                    draggable={false}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none select-none"
                   />
 
                   {/* Floating Instagram Badge in top-right corner */}

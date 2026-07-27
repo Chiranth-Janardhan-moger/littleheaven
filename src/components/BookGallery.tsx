@@ -31,7 +31,9 @@ const SinglePageCard: React.FC<{
             src={page.image}
             alt={page.title}
             loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
+            decoding="async"
+            draggable={false}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none select-none"
             referrerPolicy="no-referrer"
           />
 
@@ -205,7 +207,9 @@ const MobileAlbumStack: React.FC<{
                       src={item.image}
                       alt={item.title}
                       loading="lazy"
-                      className="w-full h-full object-cover pointer-events-none"
+                      decoding="async"
+                      draggable={false}
+                      className="w-full h-full object-cover pointer-events-none select-none"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-white text-blue-700 text-xs font-bold shadow-xs">
@@ -491,7 +495,9 @@ export const BookGallery: React.FC = () => {
                   src={lightboxItem.image}
                   alt={lightboxItem.title}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  decoding="async"
+                  draggable={false}
+                  className="w-full h-full object-cover pointer-events-none select-none"
                   referrerPolicy="no-referrer"
                 />
               </div>

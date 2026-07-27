@@ -80,9 +80,11 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
                   <div className="relative w-full aspect-[16/11] rounded-[22px] overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-500 bg-slate-100">
                     <img
                       src={prog.image}
-                      alt={prog.title}
+                      alt={`${prog.title} Program at Little's Heaven Preschool`}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                      decoding="async"
+                      draggable={false}
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none select-none"
                       referrerPolicy="no-referrer"
                     />
                     

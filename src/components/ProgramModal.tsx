@@ -54,7 +54,9 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({ program, onClose, on
               src={program.image}
               alt={program.title}
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              draggable={false}
+              className="w-full h-full object-cover pointer-events-none select-none"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
