@@ -212,15 +212,35 @@ export const GalleryToReviewsDivider: React.FC = () => {
   return (
     <div className="relative w-full overflow-hidden leading-none z-10 -mt-1 -mb-1 bg-white">
       <svg
-        className="relative block w-full h-12 sm:h-20 lg:h-24 text-sky-50/70"
-        viewBox="0 0 1440 120"
+        className="relative block w-full h-16 sm:h-24 lg:h-28"
+        viewBox="0 0 1440 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient id="galleryToReviewsGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#2563eb" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#0284c7" stopOpacity="0.4" />
+          </linearGradient>
+          <linearGradient id="galleryToReviewsGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#2563eb" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+
+        {/* Back Wave Layer */}
         <path
-          d="M0,40 C320,100 640,0 960,70 C1280,120 1380,20 1440,50 L1440,120 L0,120 Z"
-          fill="currentColor"
+          d="M0,30 C320,100 640,0 960,70 C1280,120 1380,20 1440,50 L1440,130 L0,130 Z"
+          fill="url(#galleryToReviewsGrad1)"
+        />
+
+        {/* Middle Wave Layer */}
+        <path
+          d="M0,55 C360,115 720,25 1080,85 C1260,115 1380,45 1440,65 L1440,130 L0,130 Z"
+          fill="url(#galleryToReviewsGrad2)"
         />
       </svg>
     </div>

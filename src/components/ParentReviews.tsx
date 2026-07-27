@@ -59,15 +59,17 @@ export const ParentReviews: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold tracking-wide uppercase">
-            <Heart className="w-3.5 h-3.5 text-blue-600 fill-blue-500/20" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/90 border border-blue-200 text-blue-900 text-xs font-extrabold tracking-wide uppercase shadow-xs">
+            <Heart className="w-3.5 h-3.5 text-blue-600 fill-blue-600" />
             <span>Parent Testimonials</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Loved by Parents, <br />
-            <span className="text-gradient-primary">Cherished by Children</span>
+            <span className="bg-gradient-to-r from-blue-700 via-sky-600 to-blue-800 bg-clip-text text-transparent drop-shadow-xs">
+              Cherished by Children
+            </span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-700 text-base sm:text-lg font-medium">
             Hear directly from our vibrant community of parents about their child's transformational journey at Little's Heaven Child Care & Early Learning.
           </p>
 
