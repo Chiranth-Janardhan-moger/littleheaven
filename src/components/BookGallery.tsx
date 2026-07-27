@@ -304,7 +304,7 @@ export const BookGallery: React.FC = () => {
   const underRight = animating === 'next' ? targetSpreadRight || activeSpreadRight : activeSpreadRight;
 
   return (
-    <section id="gallery" className="relative py-20 lg:py-28 bg-gradient-to-b from-blue-50/20 via-white to-sky-50/30 overflow-hidden">
+    <section id="gallery" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-blue-50/20 via-white to-sky-50/30 overflow-hidden">
       
       {/* Background ambient glows */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
@@ -432,7 +432,7 @@ export const BookGallery: React.FC = () => {
               onClick={handlePrev}
               disabled={animating !== null}
               id="gallery-book-prev-btn"
-              className="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-50 p-3.5 sm:p-4 rounded-full bg-white/90 backdrop-blur-xl border border-white/95 text-blue-600 shadow-2xl hover:bg-white hover:scale-110 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+              className="absolute left-2 sm:-left-3 lg:-left-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/90 backdrop-blur-xl border border-white/95 text-blue-600 shadow-2xl hover:bg-white hover:scale-110 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
               aria-label="Previous Page Spread"
             >
               <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
@@ -443,7 +443,7 @@ export const BookGallery: React.FC = () => {
               onClick={handleNext}
               disabled={animating !== null}
               id="gallery-book-next-btn"
-              className="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-50 p-3.5 sm:p-4 rounded-full bg-white/90 backdrop-blur-xl border border-white/95 text-blue-600 shadow-2xl hover:bg-white hover:scale-110 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+              className="absolute right-2 sm:-right-3 lg:-right-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/90 backdrop-blur-xl border border-white/95 text-blue-600 shadow-2xl hover:bg-white hover:scale-110 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
               aria-label="Next Page Spread"
             >
               <ChevronRight className="w-6 h-6 stroke-[2.5]" />

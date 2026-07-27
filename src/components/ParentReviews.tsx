@@ -49,7 +49,7 @@ export const ParentReviews: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="relative py-20 lg:py-28 bg-gradient-to-b from-white via-sky-50/20 to-blue-50/30 overflow-hidden">
+    <section id="reviews" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-white via-sky-50/20 to-blue-50/30 overflow-hidden">
       
       {/* Background ambient glowing blurs */}
       <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
@@ -124,18 +124,9 @@ export const ParentReviews: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal line-clamp-4 italic">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal italic">
                     "{rev.reviewText}"
                   </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">{rev.name}</h4>
-                    <p className="text-[10px] text-blue-600 font-semibold">
-                      Parent of {rev.childName} • {rev.childClass}
-                    </p>
-                  </div>
                 </div>
               </div>
             ))}
@@ -162,18 +153,9 @@ export const ParentReviews: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal line-clamp-4 italic">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal italic">
                     "{rev.reviewText}"
                   </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">{rev.name}</h4>
-                    <p className="text-[10px] text-blue-600 font-semibold">
-                      Parent of {rev.childName} • {rev.childClass}
-                    </p>
-                  </div>
                 </div>
               </div>
             ))}
@@ -275,7 +257,7 @@ export const ParentReviews: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-sky-500 shadow-md hover:scale-105 transition-all cursor-pointer"
+                  className="btn-shine-sweep w-full py-3 rounded-full text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 shadow-md shadow-blue-600/20 hover:scale-105 transition-all cursor-pointer"
                 >
                   Submit Story
                 </button>

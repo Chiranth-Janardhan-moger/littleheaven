@@ -253,19 +253,27 @@ export const GalleryToReviewsDivider: React.FC = () => {
  */
 export const ReviewsToContactDivider: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-slate-900">
+    <div className="relative w-full overflow-hidden leading-none z-10 -mb-1 bg-gradient-to-b from-blue-50/30 to-blue-50/40">
       {/* Magical Flowing Path SVG */}
       <svg
-        className="relative block w-full h-16 sm:h-24 lg:h-28 text-[#F8FCFF]"
+        className="relative block w-full h-16 sm:h-24 lg:h-28"
         viewBox="0 0 1440 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient id="reviewsToContactGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="#2563eb" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#0284c7" stopOpacity="0.25" />
+          </linearGradient>
+        </defs>
+
         {/* Smooth Translucent Wave Background */}
         <path
           d="M0,30 C360,110 720,-10 1080,80 C1260,115 1380,55 1440,40 L1440,130 L0,130 Z"
-          fill="currentColor"
+          fill="url(#reviewsToContactGrad)"
         />
       </svg>
     </div>

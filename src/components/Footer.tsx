@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             </h3>
             <div className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
               <MapPin className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
-              <span>Federal Bank, Dasarahalli Main Rd, Bhuvaneswari Nagar, Hebbal, Bengaluru, Karnataka 560024</span>
+              <span>1st floor Federal Bank, Dasarahalli Main Rd, Bhuvaneswari Nagar, Hebbal, Bengaluru, Karnataka 560024</span>
             </div>
           </div>
 
@@ -45,9 +45,12 @@ export const Footer: React.FC = () => {
               Direct Contact
             </h3>
             <ul className="space-y-2.5 text-slate-300 text-sm">
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-sky-400 shrink-0" />
-                <a href="tel:+917736181828" className="hover:text-white transition-colors">+91 77361 81828</a>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-sky-400 shrink-0 mt-1" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+917736181828" className="hover:text-white transition-colors">+91 77361 81828</a>
+                  <a href="tel:+917306426871" className="hover:text-white transition-colors">+91 73064 26871</a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-sky-400 shrink-0" />
@@ -65,8 +68,8 @@ export const Footer: React.FC = () => {
               Operating Hours
             </h3>
             <div className="space-y-2 text-slate-300 text-sm">
-              <p><strong className="text-white">Monday - Friday:</strong> 6:00 AM - 7:00 PM</p>
-              <p><strong className="text-white">Saturday:</strong> 6:00 AM Onward</p>
+              <p><strong className="text-white">Monday - Friday:</strong> 7:00 AM - 8:00 PM</p>
+              <p><strong className="text-white">Saturday:</strong> Opens at 10:00 AM</p>
               <p><strong className="text-white">Sunday:</strong> Closed</p>
             </div>
           </div>

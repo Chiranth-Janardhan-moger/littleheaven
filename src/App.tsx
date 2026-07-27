@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F8FCFF] text-slate-800 font-sans selection:bg-sky-200 selection:text-blue-900 overflow-x-hidden">
+    <div className="relative min-h-screen w-full max-w-full bg-[#F8FCFF] text-slate-800 font-sans selection:bg-sky-200 selection:text-blue-900 overflow-x-hidden">
       {/* Sticky Glass Navbar */}
       <Navbar
         onOpenEnroll={() => handleOpenEnroll()}

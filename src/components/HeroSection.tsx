@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden flex items-center bg-gradient-to-b from-sky-50/70 via-blue-50/30 to-white"
+      className="scroll-mt-24 sm:scroll-mt-28 relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden flex items-center bg-gradient-to-b from-sky-50/70 via-blue-50/30 to-white"
     >
       {/* Soft Ambient Glowing Aura */}
       <div className="absolute top-12 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
@@ -49,7 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
 
             {/* Authentic Body Copy */}
             <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Experience an ultra-modern, glassmorphic early learning sanctuary. We foster natural curiosity, emotional intelligence, and play-based discovery in a safe, loving environment.
+                Empowering young learners through innovative early childhood education, meaningful play, and compassionate care in a safe and stimulating environment designed for lifelong success
             </p>
 
             {/* CTA Group */}

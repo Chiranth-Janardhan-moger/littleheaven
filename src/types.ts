@@ -90,11 +90,12 @@ export interface EnquiryFormData {
 export interface InstagramReel {
   id: string;
   image: string;
-  likes: string;
-  comments: string;
   caption: string;
   tag: string;
   handle: string;
+  url: string;
+  likes?: string;
+  comments?: string;
   audioTitle?: string;
   views?: string;
 }
