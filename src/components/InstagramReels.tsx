@@ -46,15 +46,15 @@ export const InstagramReels: React.FC = () => {
     <section className="relative py-14 sm:py-20 bg-gradient-to-b from-sky-50/40 via-white to-blue-50/30 text-slate-900 overflow-hidden" id="instagram-gallery">
       {/* Background Ambient Glows */}
       <div className="absolute top-1/2 left-10 -translate-y-1/2 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* 1. Header Area (Light Theme) */}
+        {/* 1. Header Area (Matching Theme Colors) */}
         <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
-          {/* Section label with Instagram icon and handle */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 backdrop-blur-md mb-3 shadow-xs">
-            <Instagram className="w-4 h-4 text-amber-600 shrink-0" />
-            <span className="text-xs sm:text-sm font-bold tracking-wide text-amber-600 uppercase">
+          {/* Section label matching theme */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 backdrop-blur-md mb-3 shadow-xs">
+            <Instagram className="w-4 h-4 text-blue-600 shrink-0" />
+            <span className="text-xs sm:text-sm font-bold tracking-wide text-blue-700 uppercase">
               @littlesheaven.official
             </span>
           </div>
@@ -66,7 +66,7 @@ export const InstagramReels: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base max-w-xl font-medium leading-relaxed">
-            Tag <span className="text-amber-600 font-semibold">#LittlesHeaven</span> to be featured on our official global gallery.
+            Tag <span className="text-blue-600 font-semibold">#LittlesHeaven</span> to be featured on our official global gallery.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export const InstagramReels: React.FC = () => {
           <button
             onClick={() => handleScroll('left')}
             aria-label="Scroll Left"
-            className="hidden sm:flex absolute left-1 lg:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-amber-500 hover:text-slate-950 text-slate-800 border border-slate-200 shadow-lg backdrop-blur-md items-center justify-center transition-all duration-300 hover:scale-110 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 cursor-pointer"
+            className="hidden sm:flex absolute left-1 lg:-left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-blue-600 hover:text-white text-slate-700 border border-slate-200 shadow-md shadow-blue-500/10 backdrop-blur-md items-center justify-center transition-all duration-300 hover:scale-110 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 cursor-pointer"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -85,7 +85,7 @@ export const InstagramReels: React.FC = () => {
           <button
             onClick={() => handleScroll('right')}
             aria-label="Scroll Right"
-            className="hidden sm:flex absolute right-1 lg:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-amber-500 hover:text-slate-950 text-slate-800 border border-slate-200 shadow-lg backdrop-blur-md items-center justify-center transition-all duration-300 hover:scale-110 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 cursor-pointer"
+            className="hidden sm:flex absolute right-1 lg:-right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-blue-600 hover:text-white text-slate-700 border border-slate-200 shadow-md shadow-blue-500/10 backdrop-blur-md items-center justify-center transition-all duration-300 hover:scale-110 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 cursor-pointer"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -105,7 +105,7 @@ export const InstagramReels: React.FC = () => {
                     setSelectedReel(reel);
                     setIsPlaying(true);
                   }}
-                  className="snap-center shrink-0 w-[160px] sm:w-[190px] md:w-[210px] aspect-[9/16] rounded-xl sm:rounded-2xl overflow-hidden relative group cursor-pointer border border-slate-200/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-amber-400 transition-all duration-500"
+                  className="snap-center shrink-0 w-[160px] sm:w-[190px] md:w-[210px] aspect-[9/16] rounded-xl sm:rounded-2xl overflow-hidden relative group cursor-pointer border border-slate-200/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-blue-400 hover:shadow-blue-500/15 transition-all duration-500"
                 >
                   {/* Reel Image */}
                   <img
@@ -115,15 +115,15 @@ export const InstagramReels: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 
-                  {/* Floating Instagram Badge in top-right corner over translucent glassmorphism background */}
-                  <div className="absolute top-2.5 right-2.5 p-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white shadow-md flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500 group-hover:border-amber-400 transition-all duration-300 z-10">
+                  {/* Floating Instagram Badge in top-right corner */}
+                  <div className="absolute top-2.5 right-2.5 p-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white shadow-md flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-300 z-10">
                     <Instagram className="w-3.5 h-3.5 text-white" />
                   </div>
 
                   {/* Audio badge in top-left corner */}
                   {reel.audioTitle && (
                     <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-[9px] font-semibold text-slate-200 shadow-xs flex items-center gap-1 z-10 max-w-[100px] truncate">
-                      <Music className="w-2.5 h-2.5 text-amber-400 shrink-0 animate-pulse" />
+                      <Music className="w-2.5 h-2.5 text-sky-400 shrink-0 animate-pulse" />
                       <span className="truncate">{reel.audioTitle}</span>
                     </div>
                   )}
@@ -141,13 +141,13 @@ export const InstagramReels: React.FC = () => {
                         {/* Likes count with Sparkle Icon */}
                         <button
                           onClick={(e) => toggleLike(reel.id, e)}
-                          className="flex items-center gap-1 hover:text-amber-400 transition-colors"
+                          className="flex items-center gap-1 hover:text-sky-300 transition-colors"
                           title="Like Reel"
                         >
                           {isLiked ? (
                             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 shrink-0" />
                           ) : (
-                            <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                            <Sparkles className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                           )}
                           <span>{reel.likes}</span>
                         </button>
@@ -159,7 +159,7 @@ export const InstagramReels: React.FC = () => {
                         </div>
                       </div>
 
-                      <span className="text-[10px] font-bold text-amber-400 tracking-tight">
+                      <span className="text-[10px] font-bold text-sky-400 tracking-tight">
                         {reel.tag}
                       </span>
                     </div>
@@ -170,17 +170,17 @@ export const InstagramReels: React.FC = () => {
           </div>
         </div>
 
-        {/* Light Theme Footer CTA Banner */}
+        {/* Theme-Matching Primary Button CTA Banner */}
         <div className="mt-8 sm:mt-10 text-center flex items-center justify-center">
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-hallmark btn-shine-sweep px-7 py-3 rounded-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm shadow-md hover:shadow-amber-500/20 transition-all duration-300 flex items-center gap-2"
+            className="btn-hallmark btn-shine-sweep px-7 py-3 rounded-full bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 hover:from-blue-700 hover:to-sky-600 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-500/25 transition-all duration-300 flex items-center gap-2"
           >
-            <Instagram className="w-4 h-4 text-slate-950" />
+            <Instagram className="w-4 h-4 text-white" />
             <span>Follow Us @littlesheaven.official</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-950/80 ml-0.5" />
+            <ExternalLink className="w-3.5 h-3.5 text-white/90 ml-0.5" />
           </a>
         </div>
       </div>
@@ -199,9 +199,9 @@ export const InstagramReels: React.FC = () => {
             {/* Top Bar Controls */}
             <div className="relative z-10 p-3.5 bg-gradient-to-b from-black/80 via-black/40 to-transparent flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-rose-500 p-0.5 shadow-md">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 p-0.5 shadow-md">
                   <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
-                    <Instagram className="w-3.5 h-3.5 text-amber-400" />
+                    <Instagram className="w-3.5 h-3.5 text-sky-400" />
                   </div>
                 </div>
                 <div>
@@ -242,7 +242,7 @@ export const InstagramReels: React.FC = () => {
             >
               {!isPlaying && (
                 <div className="w-14 h-14 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-2xl animate-in zoom-in-75 duration-200">
-                  <Play className="w-7 h-7 text-amber-400 fill-amber-400 ml-1" />
+                  <Play className="w-7 h-7 text-sky-400 fill-sky-400 ml-1" />
                 </div>
               )}
             </div>
@@ -254,8 +254,8 @@ export const InstagramReels: React.FC = () => {
               </p>
 
               {/* Hashtags & Sound */}
-              <div className="flex items-center justify-between text-[11px] text-amber-400 font-semibold">
-                <span className="bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">
+              <div className="flex items-center justify-between text-[11px] text-sky-300 font-semibold">
+                <span className="bg-blue-500/20 px-2 py-0.5 rounded border border-blue-500/30 text-sky-300">
                   {selectedReel.tag}
                 </span>
                 <span className="text-[10px] text-slate-300 font-medium">
@@ -268,12 +268,12 @@ export const InstagramReels: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={(e) => toggleLike(selectedReel.id, e)}
-                    className="flex items-center gap-1 hover:text-amber-400 transition-colors cursor-pointer"
+                    className="flex items-center gap-1 hover:text-sky-300 transition-colors cursor-pointer"
                   >
                     {likedReels[selectedReel.id] ? (
                       <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-bounce" />
                     ) : (
-                      <Sparkles className="w-4 h-4 text-amber-400" />
+                      <Sparkles className="w-4 h-4 text-sky-400" />
                     )}
                     <span>{selectedReel.likes}</span>
                   </button>
@@ -288,7 +288,7 @@ export const InstagramReels: React.FC = () => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 text-slate-950 font-bold text-[11px] hover:bg-amber-400 transition-colors cursor-pointer"
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-[11px] shadow-md shadow-blue-500/20 transition-colors cursor-pointer"
                 >
                   <Share2 className="w-3 h-3" />
                   <span>View IG</span>
