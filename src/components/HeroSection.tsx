@@ -106,11 +106,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
               >
                 <div className="relative animate-float-slow rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
                   <img
-                    src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
-                    alt="Toddler learning with blocks"
+                    src="/baby1.avif"
+                    alt="Little's Heaven Happy Toddler"
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
@@ -134,22 +133,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnroll, onExplor
               >
                 <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
                   <img
-                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
-                    alt="Smiling preschool student"
+                    src="/baby2.avif"
+                    alt="Little's Heaven Preschooler"
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 <div className="relative animate-float-reverse rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_12px_30px_rgba(37,99,235,0.12)] border border-white/90 bg-white/80 group aspect-[4/5] sm:aspect-[3/4]">
                   <img
-                    src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=800&auto=format&fit=crop"
-                    alt="Boy playing with toys"
+                    src="/baby4.avif"
+                    alt="Little's Heaven Early Learner"
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
                 </div>
