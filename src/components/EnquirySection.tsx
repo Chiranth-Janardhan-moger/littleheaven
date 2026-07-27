@@ -32,7 +32,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
   };
 
   return (
-    <section id="contact" className="scroll-mt-24 sm:scroll-mt-28 relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-blue-50/40 via-white to-sky-50/50 overflow-hidden">
+    <section id="contact" className="scroll-mt-24 sm:scroll-mt-28 relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
       
       {/* Background Glow Blobs */}
       <div className="absolute top-12 left-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />

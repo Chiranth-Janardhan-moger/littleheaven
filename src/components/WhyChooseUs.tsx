@@ -49,7 +49,7 @@ export const WhyChooseUs: React.FC = () => {
   const marqueeFeatures = [...WHY_FEATURES, ...WHY_FEATURES, ...WHY_FEATURES];
 
   return (
-    <section id="why-us" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-sky-50/30 via-white to-blue-50/20 overflow-hidden">
+    <section id="why-us" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-white overflow-hidden">
       
       {/* Background ambient glowing blurred circles */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />

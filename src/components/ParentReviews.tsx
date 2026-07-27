@@ -49,7 +49,7 @@ export const ParentReviews: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-white via-sky-50/20 to-blue-50/30 overflow-hidden">
+    <section id="reviews" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-white overflow-hidden">
       
       {/* Background ambient glowing blurs */}
       <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />

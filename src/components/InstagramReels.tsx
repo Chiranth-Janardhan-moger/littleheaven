@@ -6,7 +6,7 @@ export const InstagramReels: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-sky-50/40 via-white to-blue-50/30 text-slate-900 overflow-hidden" id="instagram-gallery">
+    <section className="relative py-14 sm:py-20 bg-blue-50/40 text-slate-900 overflow-hidden" id="instagram-gallery">
       {/* Background Ambient Glows */}
       <div className="absolute top-1/2 left-10 -translate-y-1/2 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />

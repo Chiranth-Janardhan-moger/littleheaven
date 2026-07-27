@@ -41,7 +41,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onEnrollProgra
   };
 
   return (
-    <section id="programs" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-blue-50/20 via-sky-50/30 to-white overflow-hidden">
+    <section id="programs" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-blue-50/40 overflow-hidden">
       
       {/* Background soft glow blobs */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />

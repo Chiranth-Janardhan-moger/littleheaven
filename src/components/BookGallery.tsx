@@ -304,7 +304,7 @@ export const BookGallery: React.FC = () => {
   const underRight = animating === 'next' ? targetSpreadRight || activeSpreadRight : activeSpreadRight;
 
   return (
-    <section id="gallery" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-gradient-to-b from-blue-50/20 via-white to-sky-50/30 overflow-hidden">
+    <section id="gallery" className="scroll-mt-24 sm:scroll-mt-28 relative py-20 lg:py-28 bg-blue-50/40 overflow-hidden">
       
       {/* Background ambient glows */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
@@ -338,8 +338,8 @@ export const BookGallery: React.FC = () => {
         {/* DESKTOP VIEW: PHYSICAL 3D OPEN PHOTO ALBUM STAGE */}
         <div className="hidden md:block relative max-w-5xl mx-auto perspective-2000">
           
-          {/* Glassmorphism Hardcover Album Frame with Physical Page Stack Edges */}
-          <div className="relative bg-white/85 backdrop-blur-2xl border-2 border-white/95 rounded-[36px] sm:rounded-[44px] p-4 sm:p-6 lg:p-8 shadow-[0_25px_60px_rgba(37,99,235,0.16)] before:absolute before:-bottom-3 before:left-6 before:right-6 before:h-3 before:bg-slate-200/90 before:rounded-b-[24px] before:border-b before:border-slate-300/80 after:absolute after:-bottom-5 after:left-10 after:right-10 after:h-2.5 after:bg-slate-300/70 after:rounded-b-[18px]">
+          {/* Hardcover Album Frame */}
+          <div className="relative bg-white/90 backdrop-blur-2xl border border-white/95 rounded-[32px] sm:rounded-[40px] p-4 sm:p-6 lg:p-8 shadow-[0_20px_50px_rgba(37,99,235,0.12)]">
             
             {/* Book Spine Fold Crease Line in Center */}
             <div className="hidden md:block absolute top-4 bottom-4 left-1/2 -translate-x-1/2 w-7 bg-gradient-to-r from-slate-300/30 via-slate-600/30 to-slate-300/30 z-30 pointer-events-none rounded-full shadow-inner" />

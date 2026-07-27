@@ -3,7 +3,7 @@ import { Card } from './ui/Card';
 
 export const MissionVision: React.FC = () => {
   return (
-    <section id="about" className="scroll-mt-24 sm:scroll-mt-28 relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-sky-50/20 to-blue-50/20 overflow-hidden">
+    <section id="about" className="scroll-mt-24 sm:scroll-mt-28 relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
       
       {/* Soft Background Aura Glows */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
