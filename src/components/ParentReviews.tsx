@@ -19,9 +19,9 @@ export const ParentReviews: React.FC = () => {
   const set1 = reviewsList.slice(0, Math.ceil(reviewsList.length / 2));
   const set2 = reviewsList.slice(Math.ceil(reviewsList.length / 2));
 
-  // Repeat each set 4 times for seamless infinite loop
-  const marqueeSet1 = [...set1, ...set1, ...set1, ...set1];
-  const marqueeSet2 = [...set2, ...set2, ...set2, ...set2];
+  // Repeat each set 2 times for exact 50% seamless infinite loop
+  const marqueeSet1 = [...set1, ...set1];
+  const marqueeSet2 = [...set2, ...set2];
 
   const handleAddReviewSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -113,21 +113,17 @@ export const ParentReviews: React.FC = () => {
             {marqueeSet1.map((rev, index) => (
               <div
                 key={`set1-${rev.id}-${index}`}
-                className="w-80 sm:w-96 glass-card glass-card-hover p-6 rounded-[28px] border border-white/90 bg-white/80 shadow-[0_10px_30px_rgba(37,99,235,0.06)] shrink-0 whitespace-normal flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-300"
+                className="w-[280px] sm:w-[350px] p-5 sm:p-6 rounded-[22px] sm:rounded-[26px] border border-slate-200/80 bg-white shadow-[0_6px_20px_rgba(37,99,235,0.05)] shrink-0 whitespace-normal flex flex-col justify-center space-y-3 hover:shadow-[0_12px_28px_rgba(37,99,235,0.1)] transition-all duration-300 select-none"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <div className="flex text-amber-400">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400" />
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal italic">
-                    "{rev.reviewText}"
-                  </p>
+                <div className="flex text-amber-400">
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400" />
+                  ))}
                 </div>
+
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium italic">
+                  "{rev.reviewText}"
+                </p>
               </div>
             ))}
           </div>
@@ -142,21 +138,17 @@ export const ParentReviews: React.FC = () => {
             {marqueeSet2.map((rev, index) => (
               <div
                 key={`set2-${rev.id}-${index}`}
-                className="w-80 sm:w-96 glass-card glass-card-hover p-6 rounded-[28px] border border-white/90 bg-white/80 shadow-[0_10px_30px_rgba(37,99,235,0.06)] shrink-0 whitespace-normal flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-300"
+                className="w-[280px] sm:w-[350px] p-5 sm:p-6 rounded-[22px] sm:rounded-[26px] border border-slate-200/80 bg-white shadow-[0_6px_20px_rgba(37,99,235,0.05)] shrink-0 whitespace-normal flex flex-col justify-center space-y-3 hover:shadow-[0_12px_28px_rgba(37,99,235,0.1)] transition-all duration-300 select-none"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <div className="flex text-amber-400">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400" />
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal italic">
-                    "{rev.reviewText}"
-                  </p>
+                <div className="flex text-amber-400">
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400" />
+                  ))}
                 </div>
+
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium italic">
+                  "{rev.reviewText}"
+                </p>
               </div>
             ))}
           </div>

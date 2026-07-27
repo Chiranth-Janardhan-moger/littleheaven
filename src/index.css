@@ -174,13 +174,13 @@
 }
 
 @keyframes marqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333333%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes marqueeRight {
-  0% { transform: translateX(-33.333333%); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 /* Continuous Uninterrupted 3D Physical Book Page Flip Animations */
@@ -219,7 +219,7 @@
 }
 
 .animate-marquee-left {
-  animation: marqueeLeft 20s linear infinite;
+  animation: marqueeLeft 35s linear infinite;
   will-change: transform;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .animate-marquee-right {
-  animation: marqueeRight 20s linear infinite;
+  animation: marqueeRight 35s linear infinite;
   will-change: transform;
 }
 
