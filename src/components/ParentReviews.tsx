@@ -93,7 +93,7 @@ export const ParentReviews: React.FC = () => {
               </div>
               <div className="h-4 w-px bg-slate-200 hidden sm:block" />
               <span className="text-xs sm:text-sm font-bold text-slate-700">
-                Based on <strong>11 Google Reviews</strong>
+                Based on <strong>Google Reviews</strong>
               </span>
             </div>
           </div>
