@@ -1,4 +1,4 @@
-import { Program, DailyActivity, WhyFeature, GalleryItem, ParentReview, StatItem, Teacher } from '../types';
+import { Program, DailyActivity, WhyFeature, GalleryItem, ParentReview, StatItem, Teacher, InstagramReel } from '../types';
 
 import heroChildrenImg from '../assets/images/hero_preschool_children_1784886465304.jpg';
 import readingNookImg from '../assets/images/preschool_reading_nook_1784886477431.jpg';
@@ -482,5 +482,96 @@ export const TEACHERS: Teacher[] = [
     experience: '6+ Years Experience',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
     specialty: 'Kinetic Math & Outdoor Sports'
+  }
+];
+
+export const INSTAGRAM_REELS: InstagramReel[] = [
+  {
+    id: 'reel-1',
+    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80',
+    likes: '1.8k',
+    comments: '124',
+    caption: 'Messy hands, happy hearts! Finger painting afternoon with our toddlers in Nursery. 🎨✨',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Original Audio - Little\'s Heaven Art Room',
+    views: '14.2k'
+  },
+  {
+    id: 'reel-2',
+    image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80',
+    likes: '2.4k',
+    comments: '189',
+    caption: 'Future architects at work! Exploring STEM geometry with colorful block towers. 🧱🚀',
+    tag: '#LittlesHeavenKids',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Playtime Melodies - Kids Corner',
+    views: '22.8k'
+  },
+  {
+    id: 'reel-3',
+    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
+    likes: '1.2k',
+    comments: '95',
+    caption: 'Storytime magical corner! Today we traveled to fairytale worlds with Ms. Sarah 📚👑',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Soft Lullaby & Story Sounds',
+    views: '11.5k'
+  },
+  {
+    id: 'reel-4',
+    image: 'https://images.unsplash.com/photo-1567057419565-4349c49d8a04?auto=format&fit=crop&w=800&q=80',
+    likes: '3.1k',
+    comments: '240',
+    caption: 'Sunshine & smiles! Outdoor play session on our certified green play lawn ☀️🏃‍♂️',
+    tag: '#LittlesHeavenPlay',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Upbeat Sunshine Beats',
+    views: '35.6k'
+  },
+  {
+    id: 'reel-5',
+    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
+    likes: '1.5k',
+    comments: '88',
+    caption: 'Organic healthy snack time! Fresh fruits and smiles all around our dining tables 🍎🍌',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Yummy Munchies Acoustic',
+    views: '16.4k'
+  },
+  {
+    id: 'reel-6',
+    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80',
+    likes: '2.9k',
+    comments: '215',
+    caption: 'Music & Movement circle! Twirling, dancing, and finding rhythm together 🎶💃',
+    tag: '#LittlesHeavenKids',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Happy Toddler Dance Anthem',
+    views: '29.1k'
+  },
+  {
+    id: 'reel-7',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
+    likes: '1.9k',
+    comments: '132',
+    caption: 'Mini botanists exploring our campus garden! Observing leaves & sensory textures 🌿🔍',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Nature Acoustic Whistle',
+    views: '18.9k'
+  },
+  {
+    id: 'reel-8',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+    likes: '4.3k',
+    comments: '340',
+    caption: 'Graduation day celebrations! So proud of our bright young leaders stepping into LKG 🎉🎓',
+    tag: '#LittlesHeavenGrads',
+    handle: '@littlesheaven.official',
+    audioTitle: 'Celebration Confetti Fanfare',
+    views: '48.2k'
   }
 ];

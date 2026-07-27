@@ -30,6 +30,18 @@
     transform: rotateY(-180deg);
   }
 
+  .font-serif-luxury {
+    font-family: 'Playfair Display', Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   /* Glassmorphism primitives */
   .glass-card {
     background: rgba(255, 255, 255, 0.82);

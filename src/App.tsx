@@ -6,6 +6,7 @@ import { ProgramsSection } from './components/ProgramsSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { BookGallery } from './components/BookGallery';
 import { ParentReviews } from './components/ParentReviews';
+import { InstagramReels } from './components/InstagramReels';
 import { EnquirySection } from './components/EnquirySection';
 import { CampusTourModal } from './components/CampusTourModal';
 import { WhatsAppButton } from './components/WhatsAppButton';
@@ -93,6 +94,11 @@ export default function App() {
       {/* Parent Reviews (Dual-Direction Carousels) */}
       <AnimatedSection>
         <ParentReviews />
+      </AnimatedSection>
+
+      {/* As Seen On Instagram Reel Carousel Section */}
+      <AnimatedSection>
+        <InstagramReels />
       </AnimatedSection>
 
       {/* Decorative Divider: Wavy Bridge into Contact Section */}
