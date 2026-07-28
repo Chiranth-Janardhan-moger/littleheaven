@@ -17,6 +17,17 @@ export default function App() {
   const [tourModalOpen, setTourModalOpen] = useState(false);
   const [enrollProgramTitle, setEnrollProgramTitle] = useState('Nursery');
 
+  React.useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'IMG' || target.closest('img') || target.closest('.group')) {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => document.removeEventListener('contextmenu', handleContextMenu);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
