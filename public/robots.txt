@@ -1,0 +1,6 @@
+# Robots.txt for Little's Heaven Child Care & Early Learning
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://littlesheaven.com/sitemap.xml
