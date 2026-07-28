@@ -120,13 +120,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   id={`nav-link-${link.id}`}
-                  className={`text-xs xl:text-sm font-extrabold transition-colors duration-200 cursor-pointer ${
+                  className={`text-xs xl:text-sm font-extrabold transition-all duration-200 cursor-pointer relative py-1 ${
                     isActive
-                      ? 'text-blue-600'
-                      : 'text-slate-600 hover:text-blue-600'
+                      ? 'text-sky-600 font-black'
+                      : 'text-slate-700 hover:text-sky-600'
                   }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-sky-500 rounded-full"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </a>
               );
             })}
@@ -171,8 +178,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
                       onClick={(e) => handleNavClick(e, link.href)}
                       className={`px-4 py-2.5 rounded-xl text-base transition-colors ${
                         isActive
-                          ? 'text-blue-600 font-extrabold bg-blue-50/60'
-                          : 'text-slate-700 font-semibold hover:text-blue-600 hover:bg-slate-50'
+                          ? 'text-sky-600 font-extrabold bg-sky-50/80'
+                          : 'text-slate-700 font-semibold hover:text-sky-600 hover:bg-slate-50'
                       }`}
                     >
                       {link.name}
