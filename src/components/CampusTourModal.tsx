@@ -146,7 +146,7 @@ export const CampusTourModal: React.FC<CampusTourModalProps> = ({ isOpen, onClos
 
             <button
               type="submit"
-              className="btn-shine-sweep w-full py-3 rounded-full text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 shadow-md shadow-blue-600/20 hover:scale-105 transition-all cursor-pointer"
+              className="btn-shine-sweep w-full py-3 rounded-full text-xs font-bold text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 border border-sky-400/80 shadow-md shadow-sky-500/25 hover:scale-105 transition-all cursor-pointer"
             >
               Confirm Tour Reservation
             </button>

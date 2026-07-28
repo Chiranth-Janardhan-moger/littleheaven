@@ -87,7 +87,7 @@ export const InstagramReels: React.FC = () => {
             href="https://www.instagram.com/littlesheavenchildcare?igsh=aGF0cjJxc2l5eHE5"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-hallmark btn-shine-sweep px-7 py-3 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/20 transition-all duration-300 flex items-center gap-2"
+            className="btn-hallmark btn-shine-sweep px-7 py-3 rounded-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 border border-sky-400/80 text-white font-bold text-xs sm:text-sm shadow-md shadow-sky-500/25 transition-all duration-300 flex items-center gap-2"
           >
             <Instagram className="w-4 h-4 text-white" />
             <span>Follow Us @littlesheavenchildcare</span>

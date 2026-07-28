@@ -291,7 +291,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
                     <button
                       type="submit"
                       id="contact-send-message-btn"
-                      className="btn-shine-sweep w-full py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-all duration-300 shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 cursor-pointer"
+                      className="btn-shine-sweep w-full py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 border border-sky-400/80 transition-all duration-300 shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <Send className="w-4 h-4 shrink-0" />
                       <span>Send Message</span>
