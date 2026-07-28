@@ -1,4 +1,30 @@
 import type { IncomingMessage, ServerResponse } from 'http';
+import fs from 'fs';
+import path from 'path';
+
+// Read .env if running in Node environment without preloaded env vars
+function getEnvVar(key: string): string {
+  if (process.env[key]) return process.env[key]!;
+  try {
+    const envPath = path.resolve(process.cwd(), '.env');
+    if (fs.existsSync(envPath)) {
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      const lines = envContent.split('\n');
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (trimmed && !trimmed.startsWith('#')) {
+          const [k, ...v] = trimmed.split('=');
+          if (k.trim() === key) {
+            return v.join('=').trim();
+          }
+        }
+      }
+    }
+  } catch {
+    // Ignore file read error
+  }
+  return '';
+}
 
 export default async function handler(req: IncomingMessage & { body?: any }, res: ServerResponse) {
   // Set CORS headers
@@ -19,7 +45,7 @@ export default async function handler(req: IncomingMessage & { body?: any }, res
     return;
   }
 
-  // Parse body if needed
+  // Parse body
   let bodyData = req.body;
   if (!bodyData) {
     const buffers: Buffer[] = [];
@@ -43,20 +69,9 @@ export default async function handler(req: IncomingMessage & { body?: any }, res
     return;
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-
-  if (!apiKey) {
-    console.warn('RESEND_API_KEY is not configured in environment variables.');
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(
-      JSON.stringify({
-        success: true,
-        message: 'Enquiry received! (Dev mode: add RESEND_API_KEY to environment variables to send live emails)',
-      })
-    );
-    return;
-  }
+  const apiKey = getEnvVar('RESEND_API_KEY');
+  // Default to registered account email for Resend free tier onboarding, or custom RESEND_TO_EMAIL
+  const recipientEmail = getEnvVar('RESEND_TO_EMAIL') || 'chiranthmoger000@gmail.com';
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
@@ -67,7 +82,7 @@ export default async function handler(req: IncomingMessage & { body?: any }, res
       },
       body: JSON.stringify({
         from: 'Little\'s Heaven Enquiry <onboarding@resend.dev>',
-        to: ['contact@littlesheaven.edu.in'],
+        to: [recipientEmail],
         reply_to: email,
         subject: `New Preschool Enquiry: ${subject || 'General Inquiry'} - ${firstName} ${lastName || ''}`,
         html: `
@@ -87,7 +102,7 @@ export default async function handler(req: IncomingMessage & { body?: any }, res
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('Resend API Error:', data);
+      console.error('Resend API Response Error:', data);
       res.statusCode = response.status;
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify({ error: data.message || 'Failed to send email via Resend' }));
