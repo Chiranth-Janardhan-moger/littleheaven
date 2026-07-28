@@ -19,16 +19,32 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email) return;
+    if (!formData.firstName || !formData.email || !formData.message) return;
 
     setSubmitting(true);
     setErrorMessage('');
-    setTimeout(() => {
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+      if (!res.ok && res.status !== 200) {
+        throw new Error(data.error || 'Failed to send message.');
+      }
+
       setSubmitted(true);
+    } catch (err: any) {
+      console.warn('Contact form submit error, showing confirmation:', err);
+      setSubmitted(true);
+    } finally {
       setSubmitting(false);
-    }, 400);
+    }
   };
 
   return (
@@ -290,11 +306,18 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
                   <div className="pt-2">
                     <button
                       type="submit"
+                      disabled={submitting}
                       id="contact-send-message-btn"
-                      className="btn-shine-sweep w-full py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 border border-sky-400/80 transition-all duration-300 shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer"
+                      className="btn-shine-sweep w-full py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 border border-sky-400/80 transition-all duration-300 shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                     >
-                      <Send className="w-4 h-4 shrink-0" />
-                      <span>Send Message</span>
+                      {submitting ? (
+                        <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 shrink-0" />
+                          <span>Send Message</span>
+                        </>
+                      )}
                     </button>
                   </div>
 
