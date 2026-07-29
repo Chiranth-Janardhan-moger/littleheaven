@@ -113,6 +113,62 @@ export const PROGRAMS: Program[] = [
     keySkills: ['Concept Clarity', 'Exam Preparation', 'Subject Proficiency', 'Study Discipline'],
     features: ['Expert subject tutors', 'Small interactive batches', 'Regular progress assessments', 'Doubt-clearing sessions'],
     badgeColor: 'from-blue-600 to-indigo-600'
+  },
+  {
+    id: 'dance-program',
+    title: 'Dance',
+    ageGroup: 'Any Age',
+    timing: 'Flexible Batches',
+    description: 'Rhythmic movement, classical & contemporary dance styles building posture, grace, and body coordination.',
+    longDescription: 'Our Dance program welcomes learners of all ages to explore rhythmic movement, classical forms, and contemporary styles designed to build posture, flexibility, and stage confidence.',
+    iconName: 'Sparkles',
+    image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=800',
+    ratio: 'All Age Groups',
+    keySkills: ['Rhythm & Grace', 'Body Coordination', 'Flexibility', 'Stage Confidence'],
+    features: ['Professional dance choreographers', 'Spacious wooden floor studio', 'Performance showcase opportunities', 'Batch options for kids & adults'],
+    badgeColor: 'from-pink-500 to-rose-400'
+  },
+  {
+    id: 'yoga-program',
+    title: 'Yoga',
+    ageGroup: 'Any Age',
+    timing: 'Flexible Batches',
+    description: 'Holistic asana practice, breathing techniques, and mindfulness training for mental calm and physical vitality.',
+    longDescription: 'Guided by experienced instructors, our Yoga program offers structured pranayama, gentle stretches, and deep relaxation techniques for both children and adults.',
+    iconName: 'Sparkles',
+    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=800',
+    ratio: 'All Age Groups',
+    keySkills: ['Mindfulness', 'Posture Correction', 'Flexibility', 'Breathing Control'],
+    features: ['Certified yoga practitioners', 'Serene ambience', 'Personalized posture guidance', 'Kid-friendly & adult sessions'],
+    badgeColor: 'from-emerald-500 to-teal-400'
+  },
+  {
+    id: 'music-sloka-program',
+    title: 'Music & Sloka',
+    ageGroup: 'Any Age',
+    timing: 'Flexible Batches',
+    description: 'Traditional sloka recitation, vocal music, and instrumental rhythm sessions for spiritual calm and focus.',
+    longDescription: 'Immerse in the timeless vibration of traditional slokas, vocal melodies, and rhythm training that enhance memory retention, speech clarity, and inner peace.',
+    iconName: 'BookOpen',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800',
+    ratio: 'All Age Groups',
+    keySkills: ['Sloka Recitation', 'Phonetic Clarity', 'Vocal Pitch & Tone', 'Memory Retention'],
+    features: ['Trained classical music gurus', 'Sacred sloka chanting modules', 'Instrumental accompaniment', 'Peaceful learning environment'],
+    badgeColor: 'from-amber-500 to-orange-400'
+  },
+  {
+    id: 'art-craft-program',
+    title: 'Art & Craft',
+    ageGroup: 'Any Age',
+    timing: 'Flexible Batches',
+    description: 'Creative painting, clay modeling, sketching, and hands-on craft projects unlocking artistic imagination.',
+    longDescription: 'Our Art & Craft program provides a vibrant studio space where learners explore acrylics, watercolors, clay sculpting, origami, and mixed media art.',
+    iconName: 'Sparkles',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800',
+    ratio: 'All Age Groups',
+    keySkills: ['Color Theory', 'Clay Modeling', 'Fine Motor Skills', 'Visual Creativity'],
+    features: ['Non-toxic art supplies', 'Exhibition gallery displays', 'Guided step-by-step techniques', 'Creative craft workshops'],
+    badgeColor: 'from-purple-500 to-indigo-500'
   }
 ];
 
