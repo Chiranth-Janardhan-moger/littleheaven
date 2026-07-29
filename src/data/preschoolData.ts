@@ -313,30 +313,6 @@ export const WHY_FEATURES: WhyFeature[] = [
     highlight: 'Climate-controlled safe indoor play physical space'
   },
   {
-    id: 'why-sloka',
-    title: 'Sloka & Music',
-    badge: 'Cultural Harmony',
-    icon: 'Music',
-    description: 'Enriching young minds with traditional slokas, peaceful vocal chanting, and melodious rhythm sessions that enhance memory and focus.',
-    highlight: 'Cultivating spiritual calm, memory retention & phonetic clarity'
-  },
-  {
-    id: 'why-yoga',
-    title: 'Yoga for Adults & Kids',
-    badge: 'Mindful Wellness',
-    icon: 'Heart',
-    description: 'Holistic wellness sessions designed for children and adults to foster physical flexibility, posture awareness, and inner serenity.',
-    highlight: 'Promoting lifelong physical vitality & mental balance'
-  },
-  {
-    id: 'why-dance',
-    title: 'Dance',
-    badge: 'Rhythm & Motion',
-    icon: 'Sparkles',
-    description: 'Vibrant dance sessions blending rhythmic movement, coordination, and joyful expression to build confidence and poise.',
-    highlight: 'Fostering spatial coordination, rhythm & creative self-expression'
-  },
-  {
     id: 'why-8',
     title: 'Parent Communication',
     badge: 'Instant Updates',
