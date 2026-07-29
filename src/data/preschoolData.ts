@@ -66,7 +66,7 @@ export const PROGRAMS: Program[] = [
     description: 'Fostering foundational literacy, early numbers, creative expression, and interactive collaborative project work.',
     longDescription: 'In Nursery, children step into structured wonder. We introduce phonics sounds, shape recognition, basic counting, nature exploration, and fine motor art projects that turn abstract concepts into joyful tactile experiences.',
     iconName: 'BookOpen',
-    image: '/nusey.jpeg',
+    image: '/nursery.jpeg',
     ratio: '1:8 Teacher Ratio',
     keySkills: ['Phonics & Letter Sounds', 'Number Concepts 1-20', 'Fine Motor Control', 'Scientific Inquiry'],
     features: ['Smart digital interactive boards', 'Storybook reading nooks', 'Mini botanical garden discovery', 'Guided art & clay sculpting'],
