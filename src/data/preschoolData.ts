@@ -1,11 +1,6 @@
 import { Program, DailyActivity, WhyFeature, GalleryItem, ParentReview, StatItem, InstagramReel } from '../types';
 
-import heroChildrenImg from '../assets/images/hero_preschool_children_1784886465304.jpg';
-import readingNookImg from '../assets/images/preschool_reading_nook_1784886477431.jpg';
-import outdoorPlayImg from '../assets/images/preschool_outdoor_play_1784886489371.jpg';
-import creativeArtsImg from '../assets/images/preschool_creative_arts_1784886500740.jpg';
-
-export const HERO_MAIN_IMAGE = heroChildrenImg;
+export const HERO_MAIN_IMAGE = '/1.jpeg';
 
 export const HERO_STATS: StatItem[] = [
   {
@@ -139,7 +134,7 @@ export const DAILY_TIMELINE: DailyActivity[] = [
     description: 'Differentiated small-group learning focusing on phonics, numeracy, hands-on STEM puzzles, and interactive touch-screen discovery.',
     details: 'Teachers guide rotation stations where children explore letter sounds with tactile sand cards, construct geometric models, and test basic science experiments.',
     highlights: ['Phonics & vocabulary', 'Math manipulatives', 'STEM mini experiments', 'Small group guidance'],
-    image: heroChildrenImg
+    image: '/1.jpeg'
   },
   {
     id: 'act-4',
@@ -161,7 +156,7 @@ export const DAILY_TIMELINE: DailyActivity[] = [
     description: 'Energetic outdoor fun on rubberized turf, mini slides, sensory splash pools, tricycle tracks, and soft climbing domes.',
     details: 'Supervised physical play helps children release energy, improve gross motor coordination, build bone strength, and practice turn-taking.',
     highlights: ['Rubberized safe turf', 'Sensory water/sand play', 'Tricycle slalom park', 'Climbing balance beams'],
-    image: outdoorPlayImg
+    image: '/2.jpeg'
   },
   {
     id: 'act-6',
@@ -172,7 +167,7 @@ export const DAILY_TIMELINE: DailyActivity[] = [
     description: 'Expressive painting, pottery crafting, orchestra instrument jam sessions, and dramatic roleplay costumed theater.',
     details: 'Children explore finger painting, water colors, recycled craft building, ukulele strumming, and theatrical storytelling.',
     highlights: ['Mess-free non-toxic paints', 'Percussion band jam', 'Costume dress-up stage', 'Clay sculpting'],
-    image: creativeArtsImg
+    image: '/3.jpeg'
   },
   {
     id: 'act-7',
@@ -183,7 +178,7 @@ export const DAILY_TIMELINE: DailyActivity[] = [
     description: 'Cozy immersion in our glass library nook with puppet storytelling, audiobooks, soft ambient soundscapes, and reflection.',
     details: 'A calm wind-down period where children listen to magical stories, turn pages independently, and ask thoughtful questions about characters.',
     highlights: ['Interactive puppet shows', 'Soft beanbag library', 'Audiobook listening stations', 'Character discussion'],
-    image: readingNookImg
+    image: '/4.jpeg'
   },
   {
     id: 'act-8',
@@ -284,12 +279,12 @@ export const WHY_FEATURES: WhyFeature[] = [
 export const GALLERY_BOOK_PAGES: GalleryItem[] = [
   {
     id: 'page-1',
-    title: 'Onam Celebration Together',
-    category: 'Celebration',
-    image: '/Onam Celebration.jpeg',
-    caption: 'Children, parents, and teachers celebrating Onam festival with colorful traditional attire, flower rangoli, and beautiful cultural decorations creating memories together.',
-    ageTag: 'All Age Groups',
-    highlight: 'Celebrating Kerala traditions as one family',
+    title: '1st Anniversary Milestone Celebration',
+    category: 'Milestone',
+    image: '/anniversary.jpeg',
+    caption: 'Commemorating one golden year of nurturing young minds, inspiring endless curiosity, and building a warm sanctuary of love, laughter, and learning together.',
+    ageTag: 'Grand Milestone',
+    highlight: 'Celebrating 1 year of joyful learning & community',
     pageNumber: 1
   },
   {
@@ -354,12 +349,12 @@ export const GALLERY_BOOK_PAGES: GalleryItem[] = [
   },
   {
     id: 'page-8',
-    title: 'Individual Attention Time',
-    category: 'Classroom',
-    image: '/individual attendtion time.jpeg',
-    caption: 'Individual attention and personalized care for each child in our warm, supportive environment where every little one receives the guidance they need to thrive.',
+    title: 'Onam Celebration Together',
+    category: 'Celebration',
+    image: '/Onam Celebration.jpeg',
+    caption: 'Children, parents, and teachers celebrating Onam festival with colorful traditional attire, flower rangoli, and beautiful cultural decorations creating memories together.',
     ageTag: 'All Age Groups',
-    highlight: 'Personal attention for every child',
+    highlight: 'Celebrating Kerala traditions as one family',
     pageNumber: 8
   }
 ];
@@ -456,6 +451,14 @@ export const PARENT_REVIEWS: ParentReview[] = [
 ];
 
 export const INSTAGRAM_REELS: InstagramReel[] = [
+  {
+    id: 'reel-first',
+    image: '/reels/reel-first.png',
+    url: 'https://www.instagram.com/reel/DVu64jXD0Cp/?igsh=MXFsN3p6MGhya2d1eg==',
+    caption: 'Special moments & joyful memories at Little\'s Heaven! 🌟✨',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official'
+  },
   {
     id: 'reel-1',
     image: '/reels/reel-1.png',

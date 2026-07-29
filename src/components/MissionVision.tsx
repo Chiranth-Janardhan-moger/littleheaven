@@ -32,7 +32,7 @@ export const MissionVision: React.FC = () => {
             <div className="relative group w-full max-w-xs sm:max-w-sm">
               <div className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg border border-slate-100/80">
                 <img
-                  src="/founder.png"
+                  src="/founder.jpeg"
                   alt="Founder & Director - Little's Heaven Early Childhood Sanctuary"
                   loading="lazy"
                   decoding="async"

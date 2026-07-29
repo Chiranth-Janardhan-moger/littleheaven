@@ -19,9 +19,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
     { name: 'Programs', href: '#programs', id: 'programs' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
+    { name: 'About', href: '#about', id: 'about' },
     { name: 'Reviews', href: '#reviews', id: 'reviews' },
   ];
 
@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenTour }) => {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'programs', 'gallery', 'reviews', 'contact'];
+    const sectionIds = ['home', 'programs', 'gallery', 'about', 'reviews', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntry = entries.find((e) => e.isIntersecting);

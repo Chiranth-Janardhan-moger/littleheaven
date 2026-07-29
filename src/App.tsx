@@ -56,11 +56,6 @@ export default function App() {
         onExplorePrograms={() => scrollToSection('programs')}
       />
 
-      {/* Mission & Vision Section */}
-      <AnimatedSection>
-        <MissionVision />
-      </AnimatedSection>
-
       {/* Programs Section */}
       <AnimatedSection>
         <ProgramsSection
@@ -76,6 +71,11 @@ export default function App() {
       {/* Photo Storybook Gallery */}
       <AnimatedSection>
         <BookGallery />
+      </AnimatedSection>
+
+      {/* Mission & Vision (About) Section */}
+      <AnimatedSection>
+        <MissionVision />
       </AnimatedSection>
 
       {/* Parent Reviews (Dual-Direction Carousels) */}
