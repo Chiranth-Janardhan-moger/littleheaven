@@ -19,28 +19,31 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email || !formData.message) return;
+    if (!formData.firstName || !formData.message) return;
 
     setSubmitting(true);
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+      const nameString = `${formData.firstName} ${formData.lastName}`.trim();
+      const textLines = [
+        `*New Enquiry - Little's Heaven Preschool*`,
+        ``,
+        `*Name:* ${nameString}`,
+        `*Email:* ${formData.email || 'Not provided'}`,
+        `*Subject:* ${formData.subject || 'General Enquiry'}`,
+        `*Message:* ${formData.message}`
+      ];
 
-      const data = await res.json();
-      if (!res.ok && res.status !== 200) {
-        throw new Error(data.error || 'Failed to send message.');
-      }
+      const fullMessage = textLines.join('\n');
+      const waUrl = `https://wa.me/917736181828?text=${encodeURIComponent(fullMessage)}`;
 
+      window.open(waUrl, '_blank');
       setSubmitted(true);
     } catch (err: any) {
-      console.warn('Contact form submit error, showing confirmation:', err);
+      console.warn('Error launching WhatsApp:', err);
       setSubmitted(true);
     } finally {
       setSubmitting(false);
@@ -196,9 +199,9 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ initialProgramTi
                   <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 text-white flex items-center justify-center mx-auto shadow-lg shadow-blue-500/30">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">Message Sent!</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">Opening WhatsApp...</h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto">
-                    Thank you, <strong className="text-slate-900">{formData.firstName}</strong>. We have received your inquiry and our counselor will reach out to you shortly.
+                    Thank you, <strong className="text-slate-900">{formData.firstName}</strong>. Your enquiry details have been formatted and sent directly via WhatsApp (+91 77361 81828).
                   </p>
                   <div className="pt-4">
                     <button

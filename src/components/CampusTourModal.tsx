@@ -18,7 +18,7 @@ export const CampusTourModal: React.FC<CampusTourModalProps> = ({ isOpen, onClos
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!parentName || !phone || !date) return;
 
@@ -26,30 +26,26 @@ export const CampusTourModal: React.FC<CampusTourModalProps> = ({ isOpen, onClos
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/tour-booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          parentName,
-          phone,
-          preferredDate: date,
-          preferredTimeSlot: timeSlot
-        })
-      });
+      const tourMessage = [
+        `*Campus Tour Booking - Little's Heaven*`,
+        ``,
+        `*Parent Name:* ${parentName}`,
+        `*Phone:* ${phone}`,
+        `*Preferred Date:* ${date}`,
+        `*Time Slot:* ${timeSlot}`
+      ].join('\n');
 
-      const data = await res.json();
+      const waUrl = `https://wa.me/917736181828?text=${encodeURIComponent(tourMessage)}`;
+      window.open(waUrl, '_blank');
 
-      if (res.ok && data.success) {
-        setSubmitted(true);
-        setTimeout(() => {
-          setSubmitted(false);
-          onClose();
-        }, 2500);
-      } else {
-        setErrorMessage(data.error || 'Tour booking failed security check.');
-      }
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        onClose();
+      }, 2500);
     } catch (err) {
-      setErrorMessage('Network connection error.');
+      console.warn('Error launching WhatsApp for tour booking:', err);
+      setSubmitted(true);
     } finally {
       setSubmitting(false);
     }
@@ -141,7 +137,7 @@ export const CampusTourModal: React.FC<CampusTourModalProps> = ({ isOpen, onClos
 
             <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center gap-2 text-[11px] text-blue-700 font-semibold">
               <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>Campus Location: 42 Palm Avenue, Indiranagar, Bangalore</span>
+              <span>Campus Location: Dasarahalli Main Rd, Bhuvaneswari Nagar, Hebbal, Bengaluru</span>
             </div>
 
             <button

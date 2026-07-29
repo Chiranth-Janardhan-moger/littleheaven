@@ -15,8 +15,8 @@ export const HERO_STATS: StatItem[] = [
     id: 'stat-4',
     number: 1,
     suffix: '#',
-    label: 'Play Based Learning',
-    sublabel: 'Curriculum built for curiosity',
+    label: 'Cambridge University',
+    sublabel: 'Curriculum',
     icon: 'Sparkles'
   },
   {
