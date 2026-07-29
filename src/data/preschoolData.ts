@@ -76,14 +76,14 @@ export const PROGRAMS: Program[] = [
     id: 'activity-corner',
     title: 'Activity Corner',
     ageGroup: 'Any Age',
-    timing: '6:00 PM - 8:00 PM',
-    description: 'Engaging evening creative workshops, indoor games, hobby crafts, and supervised interactive play.',
-    longDescription: 'Our Activity Corner provides children of all ages an inspiring evening space between 6:00 PM and 8:00 PM for creative crafts, Lego building, pottery, storytelling, and indoor games.',
+    timing: '10:00 AM - 8:00 PM',
+    description: 'Engaging creative workshops, indoor games, hobby crafts, and supervised interactive play throughout the day.',
+    longDescription: 'Our Activity Corner provides children of all ages an inspiring creative space between 10:00 AM and 8:00 PM for crafts, Lego building, pottery, storytelling, and indoor games.',
     iconName: 'Sparkles',
     image: '/activity.jpeg',
     ratio: 'All Age Groups',
     keySkills: ['Creative Crafts', 'Hobby Exploration', 'Interactive Games', 'Social Bonding'],
-    features: ['Evening hobby workshops', 'Interactive board games & puzzles', 'Creative arts & painting', 'Supervised safe environment'],
+    features: ['All-day hobby workshops', 'Interactive board games & puzzles', 'Creative arts & painting', 'Supervised safe environment'],
     badgeColor: 'from-indigo-500 to-blue-500'
   },
   {
