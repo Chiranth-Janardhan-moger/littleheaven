@@ -8,7 +8,7 @@ export const HERO_STATS: StatItem[] = [
     number: 100,
     suffix: '%',
     label: 'Safe Campus',
-    sublabel: '24/7 CCTV & secure access',
+    sublabel: '24/7 CCTV',
     icon: 'ShieldCheck'
   },
   {
@@ -24,7 +24,7 @@ export const HERO_STATS: StatItem[] = [
     number: 24,
     suffix: '/7',
     label: 'Personalised App',
-    sublabel: 'Real-time updates & daily reports',
+    sublabel: 'Real-time updates',
     icon: 'Smartphone'
   }
 ];
