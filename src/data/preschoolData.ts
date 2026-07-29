@@ -321,7 +321,7 @@ export const GALLERY_BOOK_PAGES: GalleryItem[] = [
     id: 'page-5',
     title: 'Proud Little Indians',
     category: 'Celebration',
-    image: '/Independence .jpeg',
+    image: '/independence.jpeg',
     caption: 'Independence Day celebration with our young patriots proudly waving the tricolor, learning about our nation, its values, and the spirit of freedom.',
     ageTag: 'All Age Groups',
     highlight: 'Building patriotism and national pride',
