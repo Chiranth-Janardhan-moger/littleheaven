@@ -484,6 +484,14 @@ export const INSTAGRAM_REELS: InstagramReel[] = [
     handle: '@littlesheaven.official'
   },
   {
+    id: 'reel-4',
+    image: '/reels/reel-4.png',
+    url: 'https://www.instagram.com/reel/Daj1FEOve58/?igsh=eHRtdTVid3VmbjZ0',
+    caption: 'Joyful learning & fun activities at Little\'s Heaven! 🌟✨',
+    tag: '#LittlesHeaven',
+    handle: '@littlesheaven.official'
+  },
+  {
     id: 'reel-5',
     image: '/reels/reel-5.png',
     url: 'https://www.instagram.com/reel/DTuruGPj6PQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
