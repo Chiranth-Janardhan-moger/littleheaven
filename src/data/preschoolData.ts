@@ -297,14 +297,6 @@ export const WHY_FEATURES: WhyFeature[] = [
     highlight: '3x higher retention compared to passive learning'
   },
   {
-    id: 'why-5',
-    title: 'Smart Classrooms',
-    badge: 'Future Ready',
-    icon: 'Monitor',
-    description: 'Interactive glass touch panels, ergonomic child-sized furniture, ambient air purifiers, and glare-free lighting.',
-    highlight: 'HEPA filtration keeping air 99.9% virus free'
-  },
-  {
     id: 'why-6',
     title: 'Indoor Games Arena',
     badge: 'All-Weather Fun',
