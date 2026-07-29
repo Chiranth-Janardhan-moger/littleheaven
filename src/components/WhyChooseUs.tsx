@@ -11,7 +11,9 @@ import {
   MessageCircle,
   UserCheck,
   Sparkle,
-  Smartphone
+  Smartphone,
+  Music,
+  Heart
 } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
@@ -39,6 +41,10 @@ export const WhyChooseUs: React.FC = () => {
         return UserCheck;
       case 'Sparkle':
         return Sparkle;
+      case 'Music':
+        return Music;
+      case 'Heart':
+        return Heart;
       default:
         return Sparkles;
     }

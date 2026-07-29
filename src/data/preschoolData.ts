@@ -99,6 +99,20 @@ export const PROGRAMS: Program[] = [
     keySkills: ['Homework Support', 'Reading Fluency', 'Guided Reflection', 'Enrichment Skills'],
     features: ['Dedicated homework guidance', 'Quiet reading & story nooks', 'Healthy snack breaks', 'Creative skill building'],
     badgeColor: 'from-sky-600 to-blue-700'
+  },
+  {
+    id: 'tuition-program',
+    title: 'Tuition (LKG to 12th)',
+    ageGroup: 'LKG to 12th Grade',
+    timing: '4:30 PM - 6:00 PM',
+    description: 'Targeted academic guidance, conceptual clarity, and subject-wise coaching for students from LKG through 12th grade.',
+    longDescription: 'Our Tuition Program (4:30 PM - 6:00 PM) offers structured academic support, exam preparation, and conceptual clarity tailored for students from LKG to 12th Grade across all core subjects.',
+    iconName: 'BookOpen',
+    image: '/nusey.jpeg',
+    ratio: 'Small Batch Size',
+    keySkills: ['Concept Clarity', 'Exam Preparation', 'Subject Proficiency', 'Study Discipline'],
+    features: ['Expert subject tutors', 'Small interactive batches', 'Regular progress assessments', 'Doubt-clearing sessions'],
+    badgeColor: 'from-blue-600 to-indigo-600'
   }
 ];
 
@@ -243,12 +257,28 @@ export const WHY_FEATURES: WhyFeature[] = [
     highlight: 'Climate-controlled safe indoor play physical space'
   },
   {
-    id: 'why-7',
-    title: 'Outdoor Sensory Park',
-    badge: 'Nature & Motion',
-    icon: 'Sun',
-    description: 'Rubberized shock-absorbent turf, mini splash play stream, organic vegetable garden, and balance tracks.',
-    highlight: 'Daily 45-minute sunshine & vitamin D immersion'
+    id: 'why-sloka',
+    title: 'Sloka & Music',
+    badge: 'Cultural Harmony',
+    icon: 'Music',
+    description: 'Enriching young minds with traditional slokas, peaceful vocal chanting, and melodious rhythm sessions that enhance memory and focus.',
+    highlight: 'Cultivating spiritual calm, memory retention & phonetic clarity'
+  },
+  {
+    id: 'why-yoga',
+    title: 'Yoga for Adults & Kids',
+    badge: 'Mindful Wellness',
+    icon: 'Heart',
+    description: 'Holistic wellness sessions designed for children and adults to foster physical flexibility, posture awareness, and inner serenity.',
+    highlight: 'Promoting lifelong physical vitality & mental balance'
+  },
+  {
+    id: 'why-dance',
+    title: 'Dance',
+    badge: 'Rhythm & Motion',
+    icon: 'Sparkles',
+    description: 'Vibrant dance sessions blending rhythmic movement, coordination, and joyful expression to build confidence and poise.',
+    highlight: 'Fostering spatial coordination, rhythm & creative self-expression'
   },
   {
     id: 'why-8',
