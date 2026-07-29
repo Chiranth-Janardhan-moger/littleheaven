@@ -102,7 +102,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     id: 'tuition-program',
-    title: 'Tuition (LKG to 12th)',
+    title: 'Tuition',
     ageGroup: 'LKG to 12th Grade',
     timing: '4:30 PM - 6:00 PM',
     description: 'Targeted academic guidance, conceptual clarity, and subject-wise coaching for students from LKG through 12th grade.',
@@ -221,7 +221,7 @@ export const WHY_FEATURES: WhyFeature[] = [
     title: 'Experienced Teachers',
     badge: '100% Certified',
     icon: 'Award',
-    description: 'Every educator holds specialized degrees in Early Childhood Education and pediatric first-aid certifications.',
+    description: 'Every educator holds specialized degrees in Early Childhood Education.',
     highlight: 'Continuous monthly international training modules'
   },
   {
@@ -301,7 +301,7 @@ export const WHY_FEATURES: WhyFeature[] = [
     title: 'Healthy Environment',
     badge: 'Sanitised & Clean',
     icon: 'Sparkle',
-    description: 'UV-C night sanitization, non-toxic eco cleaners, organic meal kitchen, and regular health check-ups.',
+    description: 'A clean, safe, and hygienic campus environment dedicated to your child’s health and well-being.',
     highlight: 'On-campus pediatric nurse during operating hours'
   }
 ];
